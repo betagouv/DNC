@@ -81,7 +81,6 @@
                 <module>../common-ms</module>
                 <module>../demarche-ms</module>
                 <module>../situation-usager-ms</module>
-                <module>../template</module>
                 <module>../franceconnect-ms</module>
                 <module>../partenaire-ms</module>
             </modules>
