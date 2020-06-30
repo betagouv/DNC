@@ -1,0 +1,21 @@
+@import 'style/_colors.scss';
+
+// Breakpoints max size.
+// Breakpoint names are camelcased when imported in JS files (e.g. extra-large => extraLarge).
+// Keep values in px.
+$breakpoints: (
+  tiny: 0px,
+  small: 600px,
+  medium: 960px,
+  large: 1280px,
+  extra-large: 1920px,
+);
+
+$darkSlateBlue: $dark-slate-blue;
+$darkishBlue: $darkish-blue;
+$darkishBlueAlpha: $darkish-blue-alpha;
+$darkSlateBlueAlpha: $dark-slate-blue-alpha;
+$lightNavyBlue: $light-navy-blue;
+$white: $white;
+$lightGreyBlue: $light-grey-blue;
+$leaf: $leaf;

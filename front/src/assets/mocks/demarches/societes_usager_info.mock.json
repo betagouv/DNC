@@ -1,0 +1,19 @@
+{
+  "societes": [
+    {
+      "id": "societe_1",
+      "raisonSociale": "SARL Dupont et Fils",
+      "adresse": "BAT 3 APT 93, RUE DU CENTRE NOISY LE GRAND"
+    },
+    {
+      "id": "societe_2",
+      "raisonSociale": "Lampad'Hair",
+      "adresse": "3 Rue Jean Jaurès 25660 Montrond-le-Château"
+    },
+    {
+      "id": "societe_3",
+      "raisonSociale": "SAS Boisson pétillante",
+      "adresse": "182 Avenue de France - Paris"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+## Nom de l'application à changer
+spring.application.name: situation-usager-ms
+## Toujours à FALSE pour les livraisons
+debug: false
+
+spring:
+  main:
+    banner-mode: "off"
+
+logging:
+  level:
+    org:
+      springframework: ERROR
+
+justificatif:
+  sources:
+    nom: "FC"
+    prenoms: "FC"
+    adresseComplete: "FC"
+    email: "FC"
+    telephone: "FC"
+    immatriculation: "ANTS"
+    modele: "ANTS"
+    electrique: "ANTS"
+    siret: "ENTREPRISE"
+    raisonSociale: "ENTREPRISE"
+    numeroAllocataire: "CNAM"
+    quotientFamilial: "CNAM"
+    nombreEnfantACharge: "CNAM"
+    enfants: "CNAM"
+    enfant-nomPrenom: "CNAM"
+    allocataires: "CNAM"
+    codePostal: "CNAM"
+    revenuImposable: "DGFIP"
+    revenuFiscalReference: "DGFIP"
+    nombrePersonnesCharge: "DGFIP"
+    montantImpot: "DGFIP"
+    nombrePart: "DGFIP"
+    nomParent: "FC"
+    prenomParent: "FC"
+    adresseEnfant: "FC"
+    adresseParent: "FC"
+  modeles:
+    - type: IDENTITE_FRANCECONNECT
+      nomDemarche: "identité FranceConnect"
+      label: "Identité FranceConnect"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+        - "email"
+        - "telephone"
+      firstAddon: false
+      secondAddon: false
+    - type: CARTE_STATIONNEMENT
+      nomDemarche: "demande de carte de stationnement résident"
+      label: "Carte de stationnement résident"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+        - "telephone"
+        - "immatriculation"
+        - "modele"
+        - "electrique"
+      champsListe:
+        - "vehicules"
+      firstAddon: true
+      labelFirstAddon: "Informations complémentaires"
+      champsFirtsAddon:
+        - "siret"
+        - "raisonSociale"
+      secondAddon: false
+    - type: INSCRIPTION_CRECHE
+      nomDemarche: "inscription à la crèche"
+      label: "Inscription à la Crèche"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "revenuImposable"
+        - "numeroAllocataire"
+        - "adresseComplete"
+        - "telephone"
+      firstAddon: true
+      labelFirstAddon: "Informations complémentaires"
+      champsFirtsAddon:
+        - "email"
+        - "creche-nomEtablissement"
+      secondAddon: true
+      labelSecondAddon: "Documents à joindres"
+      champsSecondAddon:
+        - "documentsAJoindre"
+      valeurDocumentsAJoindre: "Certificat de grossesse, carnet de santé de l'enfant et copie des 3 derniers salaires"
+    - type: INSCRIPTION_ECOLE
+      nomDemarche: "inscription à l'école"
+      label: "Inscription à l'école"
+      champs:
+        - "enfant-nomPrenom"
+        - "adresseEnfant"
+        - "nomParent"
+        - "prenomParent"
+        - "adresseParent"
+        - "telephone"
+      champsListe:
+        - "enfants"
+      firstAddon: true
+      labelFirstAddon: "Documents à joindres"
+      champsFirtsAddon:
+        - "documentsAJoindre"
+      valeurDocumentsAJoindre: "Historique des vaccins"
+      secondAddon: false
+    - type: DOSSIER_MARIAGE
+      nomDemarche: "dossier de mariage"
+      label: "Dossier de Mariage"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+        - "nationalite"
+      firstAddon: true
+      labelFirstAddon: "Documents à joindres"
+      champsFirtsAddon:
+        - "documentsAJoindre"
+      valeurDocumentsAJoindre: "Acte de naissance"
+      secondAddon: false
+      champsSecondAddon:
+    - type: DEMANDE_TRANSPORT_SCOLAIRE
+      nomDemarche: "demande de transport scolaire"
+      label: "Demande de transport scolaire"
+      champs:
+        - "enfant-nomPrenom"
+        - "quotientFamilial"
+        - "adresseComplete"
+      champsListe:
+        - "enfants"
+      firstAddon: true
+      labelFirstAddon: "Informations complémentaires"
+      champsFirtsAddon:
+        - "transportScolaire-nomEtablissement"
+        - "email"
+      secondAddon: false
+      champsSecondAddon:
+    - type: AUTORISATION_STATIONNEMENT_DEMENAGEMENT
+      nomDemarche: "autorisation de stationnement (déménagement)"
+      label: "Autorisation de Stationnemnet (Déménagement)"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+      firstAddon: true
+      labelFirstAddon: "Informations complémentaires"
+      champsFirtsAddon:
+        - "email"
+        - "telephone"
+      secondAddon: false
+      champsSecondAddon:
+    - type: OPERATION_TRANQUILITE_VACANCES
+      nomDemarche: "inscription à l'opération Tranquilité Vacances"
+      label: "Opération Tranquilité Vacances"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+        - "email"
+        - "telephone"
+      firstAddon: false
+      secondAddon: false
+    - type: DECLARATION_MINI_MOTO
+      nomDemarche: "déclaration de mini moto ou de mini quad"
+      label: "Déclaration de mini moto ou de mini quad"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+        - "email"
+        - "telephone"
+      firstAddon: false
+      secondAddon: false
+    - type: DEMANDE_AIDE_PONCTUELLE
+      nomDemarche: "demande d'aide ponctuelle"
+      label: "Demande d'aide ponctuelle"
+      champs:
+        - "nom"
+        - "prenoms"
+        - "adresseComplete"
+        - "email"
+        - "telephone"
+      firstAddon: false
+      secondAddon: false
+    - type: RESTAURATION_SCOLAIRE
+      nomDemarche: "inscription à la restauration scolaire"
+      label: "Inscription à la restauration scolaire"
+      champs:
+        - "numeroAllocataire"
+        - "quotientFamilial"
+        - "revenuFiscalReference"
+        - "codePostal"
+        - "enfant-nomPrenom"
+        - "enfant-dateNaissance"
+        - "adresseEnfant"
+      champsListe:
+        - "enfants"
+      firstAddon: false
+      secondAddon: false

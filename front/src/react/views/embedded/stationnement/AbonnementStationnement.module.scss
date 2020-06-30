@@ -1,0 +1,87 @@
+@import 'style/_colors.scss';
+@import 'style/_fonts.scss';
+
+.cardTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 35px;
+  letter-spacing: normal;
+  text-align: center;
+  color: $dark-slate-blue;
+}
+
+.cardSubTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 35px;
+  letter-spacing: normal;
+  text-align: center;
+  color: $dark-slate-blue;
+}
+
+.cardSource {
+  margin-top: 10px;
+
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.editInformations {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  color: $dark-slate-blue;
+  font-weight: bold;
+
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.informationLabel {
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-align: right;
+  color: $light-navy-blue;
+}
+
+.informationValue {
+  font-size: 1.125rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4f4f4f;
+}
+
+.document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  margin: 1em;
+
+  svg {
+    max-width: 100%;
+    height: auto !important;
+  }
+}

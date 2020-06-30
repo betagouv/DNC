@@ -1,0 +1,81 @@
+#CONFIGURATION SPRING
+server:
+  port: 8083
+
+management:
+  server:
+    port: 8093
+
+
+#CONFIGURATION BASES
+spring:
+  datasource:
+    url: "jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1"
+    username: sa
+    password: sa
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    tomcat:
+      test-on-borrow: false
+      jmx-enabled: false
+      max-active: 100
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.HSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  # Spring JMS Settings
+  jms:
+    listener:
+      acknowledge-mode: auto
+      auto-startup: true
+      concurrency: 5
+      max-concurrency: 10
+    pub-sub-domain: false
+    template:
+      default-destination:
+      delivery-mode: non_persistent
+      priority: 100
+      qos-enabled: true
+      receive-timeout: 1000
+      time-to-live: 36000
+  # ActiveMQ Configuration
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: sender
+    password: sender
+    non-blocking-redelivery: true
+    packages:
+      trust-all: false
+      trusted: fr.gouv.modernisation.dinum.dnc
+    pool:
+      block-if-full: true
+      block-if-full-timeout: -1
+      create-connection-on-startup: true
+      enabled: false
+      expiry-timeout: 0
+      idle-timeout: 30000
+      max-connections: 1
+      maximum-active-session-per-connection: 500
+      reconnect-on-exception: true
+      time-between-expiration-check: -1
+      use-anonymous-producers: true
+#CONFIGURATION LOG
+logging:
+  config: target/classes/log4j2.xml
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    fr.gouv: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    org.springframework.jdbc.core.JdbcTemplate: WARN
+    org.springframework.jdbc.core.StatementCreatorUtils: WARN
+
+#Configurations pour accès au service FranceConnect-MS (gestion des sessions)
+api:
+  dnc:
+    franceconnect-ms:
+      url: "http://localhost:8081"
+      apiKey: "70cab50d-b66e-4d47-9e10-6d6f27bf09e8"
+

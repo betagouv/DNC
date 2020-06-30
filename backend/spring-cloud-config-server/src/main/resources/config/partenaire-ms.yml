@@ -1,0 +1,57 @@
+#CONFIGURATION SPRING
+server:
+  port: 8082
+
+management:
+  server:
+    port: 8092
+
+#CONFIGURATION DNC
+dnc:
+  front:
+    # URLs du Front pour autoriser les CORS
+    urls: http://localhost:8080,http://localhost:8090
+  #API keys pour les échanges sécurités entre les parties du DNC
+  apiKeys:
+    front:  "e31212cd-8c9e-4c53-9dde-f623dd3ab285"
+    demarche-ms:  "88be1361-796e-4401-ba86-f5b440b287ec"
+    situation-usager-ms: "7da6941e-0021-4ddf-a7e8-7e137639e87b"
+  #Secret de cryptage des mots de passe avant l'envoie en base de données
+  secret: "ciy4lp66zkb5e5g29zcmgpe426eziegc9iq9"
+
+#CONFIGURATION BASES
+spring:
+  datasource:
+    url: "jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1"
+    username: sa
+    password: sa
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    tomcat:
+      test-on-borrow: false
+      jmx-enabled: false
+      max-active: 100
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.HSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+#CONFIGURATION LOG
+logging:
+  config: target/classes/log4j2.xml
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    fr.gouv: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    org.springframework.jdbc.core.JdbcTemplate: WARN
+    org.springframework.jdbc.core.StatementCreatorUtils: WARN
+
+#Configurations pour accès au service FranceConnect-MS (gestion des sessions)
+api:
+  dnc:
+    franceconnect-ms:
+      url: "http://localhost:8081"
+

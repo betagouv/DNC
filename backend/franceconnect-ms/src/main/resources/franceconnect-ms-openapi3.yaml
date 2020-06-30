@@ -1,0 +1,268 @@
+openapi: 3.0.0
+
+info:
+  title: France Connect MS
+  description: |
+    Le microservice France Connect MS permet de récupérer le jeton d'accès France Connect auprès des serveurs France Connect via le code d'authorisation fourni par le front-office. Il stocke temporairement les jetons France Connect pour qu'ils servent de jeton de session entre le front-office et le back-office DNC.
+  version: "1.0.0"
+
+
+tags:
+  - name: Auth Code
+    description: Récupération du code d'autorisation pour demander l'access token FranceConnect
+  - name: User Session
+    description: Gestion de la session de l'utilisateur
+
+
+paths:
+
+  /fc/authentication:
+    post:
+      tags:
+        - Auth Code
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthorizationRequest'
+      description: Cet endpoint est appelé uniquement par le front-office. Il sert à récupérer le Token Franceconnect à partir du code d'authorisation Franceconnect. Si une session existe correspondant à l'id de Session, alors le Endpoint raffraichit le token Franceconnect associé à cette session.
+      operationId: getOrRefreshTokenFranceconnect
+      responses:
+        '201':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionUsager'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+
+  /fc/front/user-session:
+    post:
+      tags:
+        - User Session
+      description: Endpoint de Développement - Permet de créer une session avec un token et une identité pivot - A SUPPRIMER QUAND LES DEVS SERONT TERMINEE
+      operationId: createSessionFromIdentitePivot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionUsager'
+      responses:
+        '200':
+          description: Session existante
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionUsager'
+        '498':
+          description: Session expirée
+        '400':
+          description: Bad request
+        '401':
+          description: Session token is missing or invalid
+        '403':
+          description: Forbidden access
+        '404':
+          description: Session inexistante
+        '500':
+          description: Erreur du serveur
+  /fc/user-session/{idSession}:
+    get:
+      tags:
+        - User Session
+      description: Vérifie la validité du jeton de session et réinitialise son expiration. Cet endpoint est appelé uniquement par les microservices internes du back-office.
+      operationId: checkSession
+      security:
+        - api_key: []
+      parameters:
+        - name: idSession
+          in: path
+          description: Identifiant de la session
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Session existante
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionUsager'
+        '498':
+          description: Session expirée
+        '400':
+          description: Bad request
+        '401':
+          description: Session token is missing or invalid
+        '403':
+          description: Forbidden access
+        '404':
+          description: Session inexistante
+        '500':
+          description: Erreur du serveur
+    delete:
+      tags:
+        - User Session
+      description: Suppression de la session de l'usager. Cet endpoint est appelé uniquement par les microservices internes du back-office.
+      operationId: deleteSession
+      security:
+        - api_key: []
+      parameters:
+        - name: idSession
+          in: path
+          description: Identifiant de la session
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Bad request
+        '401':
+          description: Session token is missing or invalid
+        '403':
+          description: Forbidden access
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+
+components:
+  schemas:
+    AuthorizationRequest:
+      type: object
+      properties:
+        authorizationCode :
+          description: le code d'authorisation dans la redirection FranceConnect
+          required: true
+          type: string
+        redirectUri:
+          description: l'identifiant de la Session DNC, peut ne pas exister
+          type: string
+        idSession:
+          description: l'identifiant de la Session DNC, peut ne pas exister
+          type: string
+    SessionUsager:
+      type: object
+      properties:
+        user_id:
+          type: string
+        idSession:
+          type: string
+        currentToken:
+          type: string
+        idToken:
+          type: string
+        identitePivot:
+          $ref: '#/components/schemas/IdentitePivot'
+    IdentitePivot:
+      title: Root Type for IdentitePivot
+      description: Identité Pivot d'un utilisateur France Connect.
+      type: object
+      properties:
+        sub:
+          description: Identifiant de l'identité pivot dans France Connect.
+          type: string
+        given_name:
+          description: Prénoms de l'utilisateur séparés par des espaces.
+          type: string
+        family_name:
+          description: Nom de famille de l'utilisateur.
+          type: string
+        birthdate:
+          format: date
+          description: Date de naissance de l'utilisateur.
+          type: string
+        gender:
+          description: Genre de l'utilisateur.
+          type: string
+        birthplace:
+          description: Ville de naissance de l'utilisateur.
+          type: string
+        birthcountry:
+          description: Pays de naissance de l'utilisateur.
+          type: string
+        preferred_username:
+          description: Non renseigné dans le cadre de France Connect.
+          type: string
+        phone_number:
+          description: Numéro de téléphone de l'utilisateur.
+          type: string
+        email:
+          description: Email vérifié de l'utilisateur.
+          type: string
+        address:
+          $ref: '#/components/schemas/Adresse'
+    Adresse:
+      type: object
+      properties:
+        country:
+          type: string
+        formatted:
+          type: string
+        locality:
+          type: string
+        postal_code:
+          type: string
+        street_address:
+          type: string
+    TokenFranceconnect:
+      title: Root Type for TokenFranceconnect
+      description: Token Franceconnect.
+      type: object
+      properties:
+        access_token:
+          description: Token d'accès aux données Franceconnect.
+          type: string
+        token_type:
+          description: Type du token.
+          type: string
+        expires_in:
+          description: Durée avant expiration du token.
+          type: integer
+        id_token:
+          description: Identifiant du token.
+          type: string
+      example:
+        access_token: ed1387ce-dec6-4112-b3ef-83d604ce5e02
+        token_type: Bearer
+        expires_in: 60
+        id_token: 51d0e4d9-cd1c-4471-9796-c5df32fc2ac7
+    TokenRequestBody:
+      title: Root Type for TokenRequestBody
+      description: Objet permettant de requêter un Token Franceconnect.
+      type: object
+      properties:
+        grant_type:
+          description: Type d'authorization à transmettre à Franceconnect. Vaut toujours authorization_code.
+          type: string
+        redirect_uri:
+          description: URI de redirection après la connexion à Franceconnect.
+          type: string
+        client_id:
+          description: Client ID pour autoriser l'appel à Franceconnect.
+          type: string
+        client_secret:
+          description: Client Secret pour autoriser l'appel à Franceconnect.
+          type: string
+        code:
+          description: Authorization Code à transmettre à Franceconnect.
+          type: string
+
+
+
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: X-API-Key
+      in: header

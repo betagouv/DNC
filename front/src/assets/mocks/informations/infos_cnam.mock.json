@@ -1,0 +1,12 @@
+{
+  "nir": "1902599999001",
+  "medecin_traitant": "Antoine DUPONT",
+  "code_type_contrat": "BASE",
+  "libelle_type_contrat": "Droits de base",
+  "qualite": "assuré",
+  "date_debut_droits": "2021-01-01",
+  "date_fin_droits": "2022-01-01",
+  "nature_assurance": "AMO",
+  "adresse_centre": "185 Rue Raymond Losserand, 75014 Paris",
+  "rang_naissance": "0"
+}

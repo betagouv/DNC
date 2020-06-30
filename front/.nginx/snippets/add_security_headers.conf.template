@@ -1,0 +1,11 @@
+# mitigate clickjacking
+add_header X-Frame-Options SAMEORIGIN;
+
+# force xss protection even if user disabled it
+add_header X-XSS-Protection "1; mode=block";
+
+# set our CSP
+add_header Content-Security-Policy "${NGINX_CSP} report-uri ${NGINX_SENTRY_REPORT_URI}";
+
+# Reports maliciously issued certificates
+add_header Expect-CT report-uri=${NGINX_SENTRY_REPORT_URI};

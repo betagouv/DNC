@@ -1,0 +1,57 @@
+#CONFIGURATION SPRING
+server:
+  port: 18084
+
+management:
+  server:
+    port: 18094
+
+#CONFIGURATION DNC
+dnc:
+  #API keys pour les échanges sécurités entre les parties du DNC
+  apiKeys:
+    front:  "9c758ed4-85ba-413f-8860-99ee8f041e73"
+    demarche-ms:  "99479684-eeb8-40a4-91ed-d2570d5f47bb"
+    situation-usager-ms: "30485ac1-0846-4ece-8b6d-604e713d2a67"
+  #Secret de cryptage des mots de passe avant l'envoie en base de données
+  secret: "biyu2agg47k5os3sqh1hsrm2em9pv96vxqjg"
+
+#CONFIGURATION BASES
+spring:
+  datasource:
+    initialization-mode: always
+    generate-unique-name: true
+    url: "jdbc:postgresql://localhost:9432/postgres"
+    username: postgres
+    password: postgres
+    platform: postgres
+    tomcat:
+      test-on-borrow: false
+      jmx-enabled: false
+      max-active: 100
+  jpa:
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+#CONFIGURATION LOG
+logging:
+  config: target/test-classes/log4j2.xml
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    fr.gouv: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    org.springframework.jdbc.core.JdbcTemplate: WARN
+    org.springframework.jdbc.core.StatementCreatorUtils: WARN
+
+#Configurations pour accès au service FranceConnect-MS (gestion des sessions)
+api:
+  dnc:
+    franceconnect-ms:
+      url: "http://localhost:8081"
+      apiKey: "a1f22e1e-e8b2-47f3-90f9-fa24d5a3e78e"
+

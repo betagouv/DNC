@@ -1,0 +1,7 @@
+{
+  "adresses": [
+    { "id": "adresse_1", "value": "BAT 3 APT 93, RUE DU CENTRE NOISY LE GRAND" },
+    { "id": "adresse_2", "value": "3 Rue Jean Jaurès 25660 Montrond-le-Château" },
+    { "id": "adresse_3", "value": "182 Avenue de France - Paris" }
+  ]
+}

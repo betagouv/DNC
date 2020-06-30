@@ -1,0 +1,401 @@
+openapi: 3.0.0
+
+info:
+  title: Situation Usager MS [WIP]
+  version: "1.0.0"
+  description: |
+    Le microservice Situation Usager MS permet de récupérer le contexte Situation Usager qui contient une vue 360° des données de l'utilisateur, ses justificatifs issus des différents fournisseurs de données ainsi que ceux générés par le DNC.
+
+
+
+tags:
+  - name: Token France Connect
+    description: Récupération du token france-connect
+  - name: Mes informations
+    description: Tableau de bord de toutes les données issues de DGFIP/CNAF/CNAM ...
+  - name: Mes justificatifs
+    description: Liste des justificatifs fournis par les FDs et générés par le DNC
+  - name: Mon historique
+    description: Historique de mes connexions France Connect
+  - name: Aide
+    description: Liste des maisons de service au public (n'est pas encore validé)
+
+
+paths:
+
+  /informations:
+    get:
+      tags:
+        - Mes informations
+      summary: retourne les données de l'usager France Connectées de l'usager. Le dernier token Franceconnect connu du système pour cette session/usager sera utilisé.
+      operationId: getInfosUsager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfosUsager'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal error
+
+  /informations/justificatifs:
+    get:
+      tags:
+        - Mes informations
+        - Justificatifs
+      operationId: getInfosJustificatifs
+      description: |
+        Renvoie la Map des données de l'usager en fonction des données nécessaires au justificatifs
+        Si aucun type n'est précisé, toutes les données disponibles sont envoyées.
+      parameters:
+        - name: typeJustificatif
+          in: query
+          required: false
+          description: Type de justificatifs ciblé par les données
+          schema:
+            $ref: '#/components/schemas/TypeJustificatif'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/DonneeUsager'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal error
+  /informations/justificatifs/dummy:
+    get:
+      tags:
+        - Mes informations
+        - Justificatifs
+      operationId: getInfosDummy
+      description: Endpoint défini uniquement pour palier à un bug de OpenApi-tools quand il y a trop d'imbrication.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DonneeUsager'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal error
+
+
+  /informations/CNAF:
+    get:
+      tags:
+        - Mes informations
+      summary: retourne les données issues de la CNAF
+      operationId: getInfoCNAF
+      parameters:
+        - name: numeroAllocataire
+          description: Numero d'allocataire
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: codePostal
+          description: Code postal
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#Famille'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal error
+
+  /informations/DGFIP:
+    get:
+      tags:
+        - Mes informations
+      summary: retourne les données issues de la DGFIP
+      operationId: getInfoDGFIP
+      parameters:
+        - name: numeroFiscal
+          description: Numero fiscal
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: '^\d{13}$'
+        - name: referenceAvisFiscal
+          description: Reference d'avis fiscal
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: '^\d{13}$'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#Declaration'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal error
+
+  /justificatifs:
+    get:
+      tags:
+        - Mes justificatifs
+      summary: retourne les meta-données de tous les documents administratifs
+      operationId: getListDocuments
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Justificatif'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal error
+
+  /justificatif:
+    post:
+      tags:
+        - Mes justificatifs
+      summary: Crée un nouveau justificatif
+      operationId: createJustificatif
+      requestBody:
+        description: Liste des métadonnées à inclure dans le justificatif
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DemandeJustificatif'
+      responses:
+        '200':
+          description: Le justificatif généré avec son identifiant et son contenu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Justificatif'
+        '500':
+          description: Erreur interne du serveur.
+  /justificatif/{idJustificatif}:
+    get:
+      tags:
+        - Mes justificatifs
+      summary: Renvoie les données binaires du justificatif correspondant
+      operationId: getJustificatifById
+      parameters:
+        - name: idJustificatif
+          description: Identificatif du justificatif
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Justificatif incluant ses données en base64.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Justificatif'
+        '404':
+          description: Justificatif non trouvé
+        '500':
+          description: Erreur interne
+  /verif-justificatif:
+    get:
+      tags:
+        - Mes justificatifs
+      summary: Renvoie les données chiffrées en paramètre déchiffrée
+      parameters:
+        - name: data
+          in: query
+          required: true
+          explode: false
+          style: form
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Liste des données décodées.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Bad request
+        '500':
+          description: Erreur interne
+
+
+
+
+components:
+  securitySchemes:
+    # Précise que le Header de la session de l'Usager doit être présent pour appeler cette API
+    DncSessionIdInHeaderAuth:
+      type: apiKey
+      in: header
+      name: DNC-ID-SESSION
+  schemas:
+    TypeJustificatif:
+      type: string
+      enum:
+        - IDENTITE_FRANCECONNECT
+        - AUTORISATION_STATIONNEMENT_DEMENAGEMENT
+        - DEMANDE_TRANSPORT_SCOLAIRE
+        - DOSSIER_MARIAGE
+        - INSCRIPTION_CRECHE
+        - INSCRIPTION_ECOLE
+        - CARTE_STATIONNEMENT
+        - RESTAURATION_SCOLAIRE
+        - DEMANDE_AIDE_PONCTUELLE
+        - DECLARATION_MINI_MOTO
+        - OPERATION_TRANQUILITE_VACANCES
+    InfosUsager:
+      type: object
+      properties:
+        idSession:
+          type: string
+          description: token permettant la session de l'usager d'authentifier tous les appels front-to-back
+        idCitoyen:
+          type: string
+          description: Identifiant unique de l'usager vis à vis du sytème DNC
+        beneficiareCnam:
+          $ref: "#Beneficiaire"
+    MetaDonneeJustificatif:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nom de la donnée
+        source:
+          type: string
+          description: Source à utiliser pour récupérer la donnée
+
+    DonneeUsager:
+      type: object
+      description: >-
+        Représentation d'une donnée d'un usager. Contient le nom, la valeur, le code de la source et le format de la données.
+      properties:
+        name:
+          type: string
+          description: Nom de la donnée
+        codeSource:
+          type: string
+          description: Code de la source de la démarche
+        libelle:
+          type: string
+          description: Libelle de la donnée
+        valeur:
+          type: string
+          description: Valeur de la donnée
+        format:
+          type: string
+          description: Format de la donnée si applicable.
+        listeDonnees:
+          type: array
+          description: Liste des valeurs de l'objet si la donnée est au format Objet.
+          items:
+            $ref: '#/components/schemas/DonneeUsager'
+
+    DemandeJustificatif:
+      type: object
+      description: Demande de création d'un justificatif personnalisé
+      required:
+        - type
+      properties:
+        type:
+          $ref: '#/components/schemas/TypeJustificatif'
+        donneesSelectionnees:
+          description: Liste des données sélectionnées par l'usager pour la génération. Peut être vide.
+          type: array
+          items:
+            $ref: '#/components/schemas/DonneeUsager'
+
+    Justificatif:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'Identifiant unique du justificatif'
+        filename:
+          type: string
+          description: 'Nom du justificatif'
+        libelle:
+          type: string
+          description: 'Libellé du justificatif'
+        size:
+          type: string
+          description: 'Taille du justificatif'
+        filetype:
+          type: string
+          description: 'Type du Justificatif'
+        idPartenaire:
+          type: string
+          description: 'Identifiant du partenaire associé à ce justificatif'
+        contenu:
+          type: string
+          format: base64
+          description: 'Contenu du Justificatif encodé en base64, uniquement si les données du document sont demandées.'
+

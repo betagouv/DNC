@@ -1,0 +1,16 @@
+{
+  "foyerFiscal": "3 Rue Jean Jaurès 25660 Montrond-le-Château",
+  "dateRecouvrement": "10/10/2019",
+  "dateEtablissement": "08/07/2019",
+  "nombreParts": 3,
+  "situationFamiliale": "Célibataire",
+  "nombrePersonnesCharge": 3,
+  "revenuBrutGlobal": 48751,
+  "revenuImposable": 48751,
+  "impotRevenuNetAvantCorrections": 2165,
+  "montantImpot": 2165,
+  "rfr": 48751,
+  "anneeImpots": "2019",
+  "anneeRevenus": "2018",
+  "situationPartielle": "Situation 2018 partielle"
+}

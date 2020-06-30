@@ -1,0 +1,260 @@
+swagger: "2.0"
+info:
+  title: DNC échanges Fournisseur de Services/DNC pour démarche via DNC
+  description: "Contrats des endpoints et objets nécessaires pour les échanges entre un fournisseur de services et le DNC
+  dans le cadre d'une démarche via DNC.
+  Les codes des démarches disponibles sont disponibles dans les composants."
+  version: "1.0.0"
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdSecretAuth:
+    type: basic
+
+security:
+  - clientIdSecretAuth: []
+
+paths:
+  /demarche/{demarcheToken}:
+    get:
+      description: "Endpoint permettant de récupérer les données d'une démarche via son token.
+      Uniquement disponible pour les Fournisseurs de Services aggréés."
+      operationId: getDemarcheData
+      parameters:
+        - name: demarcheToken
+          description: Identifiant des données de la démarche côté DNC
+          type: string
+          format: uuid
+          in: path
+          required: true
+        - name: siretPartenaire
+          description: SIRET du Partenaire - Fournisseur de Services
+          type: string
+          in: query
+          required: true
+      responses:
+        200:
+          description: Réponse de la demande d'information sur une démarche. En cas d'erreur, uniquement l'entête est renseignée.
+          schema:
+            $ref: '#/definitions/Demarche'
+        401:
+          description: Erreur - Compte non authentifié dans le système DNC
+          schema:
+            $ref: '#/definitions/Erreur'
+        403:
+          description: Erreur - Données inaccéssibles pour le partenaire utilisée
+          schema:
+            $ref: '#/definitions/Erreur'
+        404:
+          description: Erreur - Aucune données trouvées avec les paramètres
+          schema:
+            $ref: '#/definitions/Erreur'
+        500:
+          description: Erreur - Erreur du système DNC, Veuiller contacter les équipes du DNC.
+          schema:
+            $ref: '#/definitions/Erreur'
+    put:
+      description: "Endpoint permettant de mettre à jour le statut d'une démarche.
+          Uniquement disponible pour les Fournisseurs de Services aggréés."
+      operationId: updateStatutuDemarche
+      parameters:
+        - name: demarcheToken
+          description: Identifiant des données de la démarche côté DNC
+          type: string
+          format: uuid
+          in: path
+          required: true
+        - name: siretPartenaire
+          description: SIRET du Partenaire - Fournisseur de Services
+          type: string
+          in: query
+          required: true
+        - name: updateStatutData
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateStatutDemarcheBody'
+      responses:
+        200:
+          description: Mise à jour bien prise en compte.
+        401:
+          description: Erreur - Compte non authentifié dans le système DNC
+          schema:
+            $ref: '#/definitions/Erreur'
+        403:
+          description: Erreur - Données inaccéssibles pour le partenaire utilisée
+          schema:
+            $ref: '#/definitions/Erreur'
+        404:
+          description: Erreur - Aucune données trouvées avec les paramètres
+          schema:
+            $ref: '#/definitions/Erreur'
+        500:
+          description: Erreur - Erreur du système DNC, Veuiller contacter les équipes du DNC.
+          schema:
+            $ref: '#/definitions/Erreur'
+
+
+
+definitions:
+  Erreur:
+    title: Entete
+    type: object
+    description: Erreur lors de l'appel d'un service.
+    properties:
+      code:
+        type: string
+        description: Code de l'erreur
+      description:
+        type: string
+        description: Description de l'erreur.
+  DemarcheEnum:
+    title: DemarcheEnum
+    description: Enumération des codes de démarches pris en charge par le DNC
+    example: CARTE_STATIONNEMENT
+    type: string
+    x-enum-elements:
+      - name: CARTE_STATIONNEMENT
+        description: Demande de carte de stationnement
+      - name: RESTAURATION_SCOLAIRE
+        description: Inscription à la restauration scolaire
+      - name: DEMANDE_AIDE_PONCTUELLE
+        description: Demande d'aide financiaire ponctuelle liée à un enfant inscrit dans le secondaire
+      - name: DECLARATION_MINI_MOTO
+        description: Déclaration mini-moto
+      - name: OPERATION_TRANQUILITE_VACANCES
+        description: Opération Tranquilité Vacances
+      - name: IDENTITE_FRANCECONNECT
+      - name: AUTORISATION_STATIONNEMENT_DEMENAGEMENT
+      - name: DEMANDE_TRANSPORT_SCOLAIRE
+      - name: DOSSIER_MARIAGE
+      - name: INSCRIPTION_CRECHE
+      - name: INSCRIPTION_ECOLE
+    enum:
+      - CARTE_STATIONNEMENT
+      - RESTAURATION_SCOLAIRE
+      - DEMANDE_AIDE_PONCTUELLE
+      - DECLARATION_MINI_MOTO
+      - OPERATION_TRANQUILITE_VACANCES
+      - IDENTITE_FRANCECONNECT
+      - AUTORISATION_STATIONNEMENT_DEMENAGEMENT
+      - DEMANDE_TRANSPORT_SCOLAIRE
+      - DOSSIER_MARIAGE
+      - INSCRIPTION_CRECHE
+      - INSCRIPTION_ECOLE
+  DemarcheResponse:
+    title: DemarcheResponse
+    type: object
+    description: Réponse d'une demande d'informations sur une démarche
+    properties:
+      entete:
+        description: Entête de la réponse
+        $ref: '#/definitions/Entete'
+      demarche:
+        description: Informations de la démarches
+        $ref: '#/definitions/Demarche'
+  Entete:
+    title: Entete
+    type: object
+    description: En-tête de réponse renvoyée par un endpoint. Présente le code d'erreur et la cause.
+    properties:
+      code:
+        type: string
+        description: Code de la réponse. Calquée sur les codes d'erreur HTTP.
+      cause:
+        type: string
+        description: Cause de l'erreur si le code présente un code d'erreur HTTP.
+  Demandeur:
+    title: Demandeur
+    type: object
+    description: Demandeur de la démarche
+    properties:
+      nom:
+        type: string
+        description: Nom de l'usager demandeur
+      prenoms:
+        type: string
+        description: Prénoms de l'usager demandeur
+      adresseComplete:
+        type: string
+        description: Adresse complète de l'usager demandeur
+        example: "20 avenue de Ségur 75007 Paris"
+      telephone:
+        type: string
+        description: Numéro de téléphone de l'usager demandeur
+      email:
+        type: string
+        description: Adresse email de l'usager demandeur
+  PieceJointe:
+    type: object
+    properties:
+      filename:
+        type: string
+        description: 'Nom du fichier'
+      contenu:
+        type: string
+        format: byte
+        description: 'Contenu du fichier encodé en base64.'
+  CarteStationnement:
+    title: CarteStationnement
+    description: Informations pour une demande de carte de stationnement
+    type: object
+    properties:
+      immatriculation:
+        type: string
+        description: Immatriculation du véhicule
+      modele:
+        type: string
+        description: Modèle du véhicule
+      siret:
+        type: string
+        description: SIRET de l'entreprise si cela concerne un véhicule de société
+      raisonSociale:
+        type: string
+        description: Raison sociale de l'entreprise si cela concerne un véhicule de société
+      electrique:
+        type: boolean
+        description: Flag indiquant si le véhicule concernée est electrique ou non.
+  Demarche:
+    title: Demarche
+    description: Données de la démarches.
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+        description: Identifiant de la démarche
+      code:
+        type: object
+        description: Code de la démarche
+        $ref: '#/definitions/DemarcheEnum'
+      siretPartenaire:
+        type: string
+        description: SIRET du partenaire fournisseur de service où a été fait la démarche
+      demandeur:
+        type: object
+        description: Demandeur de la démarche
+        $ref: '#/definitions/Demandeur'
+      justificatif:
+        type: object
+        description: Justificatif de la démarche
+        $ref: '#/definitions/PieceJointe'
+      carteStationnement:
+        type: object
+        description: Information sur la démarche de demande de carte de stationnement
+        $ref: '#/definitions/CarteStationnement'
+  UpdateStatutDemarcheBody:
+    title: UpdateStatutDemarcheBody
+    description: Données de mise à jour du statut de la démarche
+    type: object
+    properties:
+      statut:
+        type: string
+        description: Nouveau statut de la démarche
+      commentaires:
+        type: string
+        description: Commentaires du partenaire sur lors de la mise à jour

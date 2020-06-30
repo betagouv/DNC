@@ -1,0 +1,15 @@
+# Dependencies.
+node_modules/
+
+# Build folders.
+.dev/
+.dist/
+.reports/
+.tmp/
+
+# Include config folders.
+!/.jest
+!/.storybook
+!/.webpack
+# Include root config files.
+!/*.js

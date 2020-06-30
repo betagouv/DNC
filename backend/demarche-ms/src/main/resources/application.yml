@@ -1,0 +1,13 @@
+## Nom de l'application à changer
+spring.application.name: demarche-ms
+## Toujours à FALSE pour les livraisons
+debug: false
+
+spring:
+  main:
+    banner-mode: "off"
+
+logging:
+  level:
+    org:
+      springframework: ERROR

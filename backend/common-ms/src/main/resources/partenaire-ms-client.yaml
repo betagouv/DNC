@@ -1,0 +1,222 @@
+openapi: 3.0.0
+info:
+  title: Partenaire MS [WIP]
+  description: Le microservice Partenaire MS permet de référencer tous les partenaires souhaitant intégrer le DNC, ainsi qu'à paraméter les configurations d'intégration DNC-Partenaire, choisir et configurer les démarches à réaliser ainsi que les données nécéssaires à leur réalisation   
+  version: "1.0.0"
+  
+tags:
+  - name: Partenaire 
+    description: Opérations accessibles pour un partenaire habilité via IHM
+  - name: Admin 
+    description: Operations accessibles pour l'administrateur du DNC via IHM
+  - name: Microservices DNC 
+    description: Operations accessibles par les autres composants back-office 
+
+
+paths:
+  /partenaire:
+    get:
+      tags:
+        - Microservices DNC
+        - Admin
+      summary: Liste de tous les partenaires existants
+      description: Cet endpoint permet de récupérer la liste de tous les partenaires existants
+      operationId: getListePartenaires
+      security:
+        - userJWT: []
+      responses:
+        '200': 
+          description: Liste des partenaires disponibles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PartenaireInfos'
+        '400':
+          description: Mauvaise requête 
+        '401':
+          description: Authorisation introuvable ou invalide
+        '404':
+          description: Ressource introuvable
+        '498':
+          description: Session expirée
+
+    post:
+      tags:
+        - Admin
+      summary: Modifier un partenaire
+      description: Cet endpoint permet à l'administrateur de modifier un partenaire
+      operationId: updatePartenaire
+      security:
+        - userJWT: []
+      parameters:
+        - name: id_partenaire
+          in: path
+          description: ID du partenaire
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartenaireInfos'
+        description: Information de mise à jour du partenaire
+        required: true
+      responses:
+        '200': 
+          description: Partenaire mis à jour
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartenaireInfos'
+        '400':
+          description: Mauvaise requête 
+        '401':
+          description: Authorisation introuvable ou invalide
+        '404':
+          description: Ressource introuvable
+        '498':
+          description: Session expirée
+        
+  /partenaire/{siret_partenaire}:
+    get:
+      tags:
+        - Microservices DNC
+        - Admin
+      summary: Accéder aux informations d'un partenaire
+      description: Cet endpoint permet d'accéder aux information d'un partenaire existant
+      operationId: getPartenaire
+      security:
+        - userJWT: []
+      parameters:
+        - name: siret_partenaire
+          in: path
+          description: SIRET du partenaire
+          required: true
+          schema:
+            type: string
+      responses:
+        '200': 
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartenaireInfos'
+        '400':
+          description: Mauvaise requête 
+        '401':
+          description: Authorisation introuvable ou invalide
+        '404':
+          description: Ressource introuvable
+        '498':
+          description: Session expirée
+
+  /partenaire/credentials/check:
+    get:
+      tags:
+        - Partenaire
+      summary: Vérifier les droits d'accès du partenaire
+      description: Cet endpoint permet d'authentifier les accès d'un appel fait par le back-office partenaire pour accèder à une ressource, à travers le siret du partenaire et son paramètres client_id & client_secret
+      operationId: checkCredentialsPartenaire
+      security:
+        - api_key: []
+      parameters:
+        - name: siret_partenaire
+          in: query
+          description: SIRET du partenaire
+          required: true
+          schema:
+            type: string
+        - name: client_id
+          in: header
+          description: ID du partenaire
+          required: true
+          schema:
+            type: string
+        - name: client_secret
+          in: header
+          description: ID du partenaire
+          required: true
+          schema:
+            type: string
+            format: password
+      responses:
+        '200': 
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GrantAccessPartner'
+        '400':
+          description: Mauvaise requête 
+        '401':
+          description: Authorisation introuvable ou invalide
+        '404':
+          description: Ressource introuvable
+        '498':
+          description: Session expirée
+        
+
+
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: X-API-Key
+      in: header
+  schemas:
+    PartenaireInfos:
+      type: object
+      properties:
+        siret:
+          description: SIRET du partenaire
+          type: string
+        logo:
+          type: string
+          format: byte
+          description: Logo rattaché à ce partenaire
+        libelleCourt:
+          type: string
+          description: Libellé court rattachée à ce partenaire
+        libelleLong:
+          type: string
+          description: Libellé long rattachée à ce partenaire
+        adresse:
+          type: string
+        contact_responsable:
+          type: object
+          properties:
+            nom_complet:
+              type: string
+            email: 
+              type: string
+        dateCreation:
+          type: string
+          description: Date de création du partenaire dans le DNC
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        dateMAJ:
+          type: string
+          description: Date de mise à jour du partenaire dans le DNC
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+
+    GrantAccessPartner:
+      type: object
+      properties:
+        id:
+          type: string
+
+    Erreur:
+      title: Entete
+      type: object
+      description: Erreur lors de l'appel d'un service.
+      properties:
+        code:
+          type: string
+          description: Code de l'erreur
+        description:
+          type: string
+          description: Description de l'erreur.

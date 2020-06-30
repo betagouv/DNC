@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build
+.dist/
+.dev/
+.tmp/
+.report/
+
+# Secrets
+.env
+# Allow .env.[ENV].example so developers can see the required env keys
+!.env.*.example
+
+# Temp files
+*.log
+
+# IDE
+.vscode/
+.idea/
+.history/

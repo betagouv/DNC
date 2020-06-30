@@ -1,0 +1,119 @@
+swagger: "2.0"
+info:
+  description: "Service de gestion des démarches du DNC."
+  version: "1.0"
+  title: "Swagger Demarche DNC"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/v1"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /demarche:
+    put:
+      summary: "Creation d'une nouvelle démarche"
+      description: ""
+      operationId: "createDemarche"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "demarche"
+          description: "Objet de la démarche"
+          required: true
+          schema:
+            $ref: "#/definitions/Demarche"
+      responses:
+        201:
+          description: "Démarche créée"
+          schema:
+            type: "string"
+            description: "Identifiant de la démarche"
+    post:
+      summary: "Mise à jour de la démarche"
+      description: ""
+      operationId: "updateDemarche"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "demarche"
+          description: "Objet de la démarche"
+          required: true
+          schema:
+            $ref: "#/definitions/Demarche"
+      responses:
+        200:
+          description: "Démarche mise à jour"
+          schema:
+            type: "string"
+            description: "Identifiant de la démarche"
+        404:
+          description: "Démarche non trouvée"
+
+
+  /demarche/{id}:
+    get:
+      summary: "Trouver une démarche par son id"
+      description: ""
+      operationId: "getDemarche"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "path"
+          description: "ID de la déclaration au format UUID"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Demarche"
+        404:
+          description: "Démarche non trouvée"
+
+definitions:
+  Demarche:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        description: "Identifiant de la démarche"
+      idUsager:
+        type: "string"
+        description: "Identifiant de l'usager"
+      siretPartenaire:
+        type: "string"
+        description: "SIRET du Partenaire"
+      codeDemarche:
+        type: "string"
+        description: "Code de la démarche Partenaire"
+      commentaires:
+        type: "string"
+        description: "Commentaires du Partenaires"
+      dateDebut:
+        type: string
+        format: date
+        description: "Date de début de la démarche"
+      dateMiseAJour:
+        type: string
+        format: date
+        description: "Date de début de la démarche"
+      libelle:
+        type: "string"
+        description: "Libellé de la démarche"
+      statut:
+        type: "string"
+        description: "Statut de la démarche"
+      partenaireID:
+        type: "string"
+        description: "Identifiant du partenaire à l'initiative de la démarche"

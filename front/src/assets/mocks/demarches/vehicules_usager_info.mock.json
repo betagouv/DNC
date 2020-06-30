@@ -1,0 +1,22 @@
+{
+  "vehicules": [
+    {
+      "id": "vehicule_1",
+      "immatriculation": "AA-123-AA",
+      "modele": "Kia Soul",
+      "electrique": false
+    },
+    {
+      "id": "vehicule_2",
+      "immatriculation": "BB-456-BB",
+      "modele": "Peugeot 208",
+      "electrique": false
+    },
+    {
+      "id": "vehicule_3",
+      "immatriculation": "CC-789-CC",
+      "modele": "Opel Corsa",
+      "electrique": true
+    }
+  ]
+}

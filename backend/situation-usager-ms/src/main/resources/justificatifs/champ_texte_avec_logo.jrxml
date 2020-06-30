@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport_declaration_mini_moto" pageWidth="572" pageHeight="26" whenNoDataType="NoPages" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f4c1762e-3227-4375-9550-72f5cfcf497a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="MAP_LOGOS" class="java.util.Map"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="libelle" class="java.lang.String"/>
+	<field name="valeur" class="java.lang.String"/>
+	<field name="codeSource" class="java.lang.String"/>
+	<field name="entete" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[T($F{entete} ) != ""]]></printWhenExpression>
+			<textField>
+				<reportElement x="0" y="0" width="572" height="26" uuid="f14c8224-56c6-46f4-a05f-d9df297aa7d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<printWhenExpression><![CDATA[T($F{entete} ) != ""]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Marianne"/>
+					<paragraph lineSpacing="Single" spacingBefore="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b><u>"+$F{entete}+" :</u></b>"+"<br/>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="26" splitType="Immediate">
+			<property name="com.jaspersoft.studio.layout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[T($F{valeur} ) != ""]]></printWhenExpression>
+			<frame>
+				<reportElement isPrintRepeatedValues="false" mode="Transparent" x="0" y="0" width="572" height="26" uuid="2b03fb37-662d-4509-9bfe-e523eccb7a7e">
+					<property name="ShowOutOfBoundContent" value="true"/>
+				</reportElement>
+				<frame>
+					<reportElement stretchType="ElementGroupHeight" x="155" y="0" width="394" height="26" isPrintWhenDetailOverflows="true" uuid="3c233ffc-dd44-48c2-9018-3cd7a5ce7600"/>
+					<image>
+						<reportElement x="19" y="0" width="23" height="25" uuid="4517356e-2a11-4f90-8ae3-3ae6ce904504">
+							<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						</reportElement>
+						<imageExpression><![CDATA[$P{MAP_LOGOS}.get($F{codeSource})]]></imageExpression>
+					</image>
+					<textField textAdjust="StretchHeight">
+						<reportElement x="47" y="6" width="343" height="15" uuid="899c9579-7a70-4fa9-b773-bff31a72b904"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="Marianne" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+							<paragraph lineSpacing="Single" lineSpacingSize="20.0"/>
+						</textElement>
+						<textFieldExpression><![CDATA["<b>"+$F{libelle}+" : </b>"+$F{valeur}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

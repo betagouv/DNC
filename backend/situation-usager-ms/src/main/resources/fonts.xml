@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Marianne">
+        <normal>justificatifs/fonts/Marianne-Regular.otf</normal>
+        <bold>justificatifs/fonts/Marianne-Bold.otf</bold>
+        <italic>justificatifs/fonts/Marianne-Regular.otf</italic>
+        <boldItalic>justificatifs/fonts/Marianne-Regular.otf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+    <fontFamily name="Marianne Light">
+        <normal>justificatifs/fonts/Marianne-Light.otf</normal>
+        <bold>justificatifs/fonts/Marianne-Light.otf</bold>
+        <italic>justificatifs/fonts/Marianne-Light.otf</italic>
+        <boldItalic>justificatifs/fonts/Marianne-Light.otf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+</fontFamilies>

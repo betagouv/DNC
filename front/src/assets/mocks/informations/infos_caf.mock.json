@@ -1,0 +1,22 @@
+{
+  "numeroAllocataire": "675433002",
+  "codePostal": "75002",
+  "nombreAllocataires": "2",
+  "nombreEnfants": "2",
+  "alloc1": "CLOVIS HEBERT",
+  "alloc1_birthday": "12/03/1968",
+  "alloc1_sexe": "M",
+  "alloc2": "EMILIE HEBERT",
+  "alloc2_birthday": "19/11/1970",
+  "alloc2_sexe": "F",
+  "enfant1": "GABRIEL HEBERT",
+  "enfant1_birthday": "14/07/2010",
+  "enfant1_sexe": "M",
+  "enfant2": "JULIE HEBERT",
+  "enfant2_birthday": "23/12/2008",
+  "enfant2_sexe": "F",
+  "quotientFamilial": "400",
+  "mois": "6",
+  "annee": "2018",
+  "adresse": "182 Avenue de France - Paris"
+}

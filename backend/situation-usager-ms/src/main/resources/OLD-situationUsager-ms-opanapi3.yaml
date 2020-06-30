@@ -1,0 +1,283 @@
+openapi: 3.0.0
+
+info:
+  title: Situation Usager MS [WIP]
+  version: "1.0.0"
+  description: |
+    Le microservice Situation Usager MS permet de récupérer le contexte Situation Usager qui contient une vue 360° des données de l'utilisateur, ses justificatifs issus des différents fournisseurs de données ainsi que ceux générés par le DNC.
+
+
+
+tags:
+  - name: Token France Connect
+    description: Récupération du token france-connect
+  - name: Mes informations
+    description: Tableau de bord de toutes les données issues de DGFIP/CNAF/CNAM ...
+  - name: Mes justificatifs
+    description: Liste des justificatifs fournis par les FDs et générés par le DNC
+  - name: Mon historique
+    description: Historique de mes connexions France Connect
+  - name: Aide
+    description: Liste des maisons de service au public (n'est pas encore validé)
+
+
+paths:
+
+  /informations:
+    get:
+      tags:
+        - Mes informations
+      summary: retourne les données France Connectées de l'usager
+      operationId: getInfoFC
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoUsagerFC'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not alloud
+        '500':
+          description: Internal error
+
+  /informations/CNAF:
+    get:
+      tags:
+        - Mes informations
+      summary: retourne les données issues de la CNAF
+      operationId: getInfoCNAF
+      parameters:
+        - name: Numéro d'allocataire
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: Code postal
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoUsagerCNAF'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not alloud
+        '500':
+          description: Internal error
+
+  /informations/DGFIP:
+    get:
+      tags:
+        - Mes informations
+      summary: retourne les données issues de la DGFIP
+      operationId: getInfoDGFIP
+      parameters:
+        - name: Numéro fiscal
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: Référence d'avis fiscal
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoUsagerDGFIP'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not alloud
+        '500':
+          description: Internal error
+
+  /justificatifs:
+    get:
+      tags:
+        - Mes justificatifs
+      summary: retourne les meta-données de tous les documents administratifs
+      operationId: getListDocuments
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Justificatif'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not alloud
+        '500':
+          description: Internal error
+
+    post:
+      tags:
+        - Mes justificatifs
+      summary: retourne les documents administratifs séléctionnés
+      operationId: getDocumentById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+        description: Identifiants des documents à télécharger
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not alloud
+        '500':
+          description: Internal error
+
+  /carteMSP/{code_postal}:
+    get:
+      tags:
+        - Aide
+      summary: retourne le géocodage des MSP liés au code postal
+      operationId: getGeocode
+      parameters:
+        - name: code_postal
+          in: path
+          description: code postal entré par l'usager
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoordonneesMSP'
+        '400':
+          description: Bad request
+        '401':
+          description: Authorization is missing or invalid
+        '404':
+          description: Resource not found
+        '405':
+          description: Method not alloud
+        '500':
+          description: Internal error
+
+
+
+components:
+  schemas:
+    InfoUsagerFC:
+      type: object
+      properties:
+        session_token:
+          type: string
+          description: token permettant d'authentifier tous les appels front-to-back
+
+    InfoUsagerCNAF:
+      type: object
+      properties:
+        id:
+          type: string
+
+    InfoUsagerDGFIP:
+      type: object
+      properties:
+        id:
+          type: string
+
+    Justificatif:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'Identifiant unique du justificatif'
+        filename:
+          type: string
+          description: 'Nom du justificatif'
+        libelle:
+          type: string
+          description: 'Libellé du justificatif'
+        size:
+          type: string
+          description: 'Taille du justificatif'
+        filetype:
+          type: string
+          description: 'Type du Justificatif'
+        idPartenaire:
+          type: string
+          description: 'Identifiant du partenaire associé à ce justificatif'
+        contenu:
+          type: string
+          format: binary
+          description: 'Contenu du Justificatif encodé en base64, uniquement si les données du document sont demandées.'
+
+    CoordonneesMSP:
+      type: object
+      properties:
+        id:
+          type: string
+
+
+
+  securitySchemes:
+    cookie_auth_A:
+      type: apiKey
+      in: cookie
+      name: COOKIE_header_payload
+    cookie_auth_B:
+      type: apiKey
+      in: cookie
+      name: COOKIE_signature
+    api_key:
+      type: apiKey
+      name: api_key_SituationUsagerMS
+      in: header
+
+security:
+  - cookie_auth_A: []
+    cookie_auth_B: []

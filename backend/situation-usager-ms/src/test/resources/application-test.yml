@@ -1,0 +1,121 @@
+#CONFIGURATION SPRING
+server:
+  port: 18084
+
+management:
+  server:
+    port: 18094
+
+#Configuration propre au DNC
+#Configuration du time to live
+dnc:
+  front:
+    url: "http://dnc-dev.cloudapps.dfp.ovh"
+    queryVerificationUrl: "/verif-justificatif?data="
+  justificatif:
+    nbrMoisValidite: 3
+  situationUsager:
+    timeToLive: 60 #durée en secondes, 900 = 15min
+  demarcheUsager:
+    timeToLive: 60 #durée en secondes, 900 = 15min
+  ## Clé de chiffrement du DNC
+  secret: 02PX05TCRO36HLB9
+  #Pool des threads pour les appels aux API Franceconnectées
+  pool:
+    corePoolSize: 8
+    maxPoolSize: 28
+    threadNamePrefix: "SituationUsager-ApiFC-"
+
+#Configurations des services
+api:
+  cnaf:
+    baseUrl: "http://localhost:18081"
+    #baseUrl: "https://particulier-test.api.gouv.fr/api"
+    apiKey: "3841b13fa8032ed3c31d160d3437a76a"
+  dgfip:
+    baseUrl: "http://localhost:18081"
+    #baseUrl: "https://particulier-test.api.gouv.fr/api"
+    apiKey: "83c68bf0b6013c4daf3f8213f7212aa5"
+  cnam:
+    #baseUrl: "https://partenaires.api.ameli.fr/test/v1/droits/beneficiaires"
+    baseUrl: "http://localhost:18081"
+    apiKey: "b1108267-e5f2-462a-a17c-a2b8ba1af352"
+  #Configurations pour accès au service FranceConnect-MS (gestion des sessions)
+  dnc:
+    franceconnect-ms:
+      url: "http://localhost:18081"
+      apiKey: "b7f7ecea-a7c9-4207-a95a-c07e3b0a7f7b"
+    partenaire-ms:
+      url: "http://localhost:18081"
+      apiKey: "30485ac1-0846-4ece-8b6d-604e713d2a67"
+
+#CONFIGURATION BASES
+#Ces configurations sont comprises directement par Spring (Spring Appendix)
+spring:
+  data:
+    redis:
+      repositories:
+        enabled: true
+  redis:
+    database: 1
+    host: localhost
+    port: 6879
+    password:
+    lettuce:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
+  # Spring JMS Settings
+  jms:
+    listener:
+      acknowledge-mode: auto
+      auto-startup: false
+      concurrency: 5
+      max-concurrency: 10
+    pub-sub-domain: false
+    template:
+      default-destination:
+      delivery-mode: non_persistent
+      priority: 100
+      qos-enabled: true
+      receive-timeout: 1000
+      time-to-live: 36000
+
+  # ActiveMQ Configuration
+  activemq:
+    #Embedded URL
+    broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+    #Exemple avec serveur existant
+    #broker-url: tcp://localhost:61616
+    user: sender
+    password: sender
+    in-memory: true
+    non-blocking-redelivery: true
+    packages:
+      trust-all: false
+      trusted: fr.gouv.modernisation.dinum.dnc
+    pool:
+      block-if-full: true
+      block-if-full-timeout: -1
+      create-connection-on-startup: true
+      enabled: false
+      expiry-timeout: 0
+      idle-timeout: 30000
+      max-connections: 1
+      maximum-active-session-per-connection: 500
+      reconnect-on-exception: true
+      time-between-expiration-check: -1
+      use-anonymous-producers: true
+
+#CONFIGURATION LOG
+logging:
+  config: target/test-classes/log4j2.xml
+  level:
+    root: ERROR
+    org.springframework: INFO
+    fr.gouv: INFO
+
+
+

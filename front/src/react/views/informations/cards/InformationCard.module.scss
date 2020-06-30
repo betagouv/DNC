@@ -1,0 +1,59 @@
+@import 'style/_colors.scss';
+@import 'style/_fonts.scss';
+
+.content {
+  p {
+    margin: 0;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 35px;
+    letter-spacing: normal;
+    text-align: center;
+    color: $dark-slate-blue;
+  }
+
+  .source {
+    margin-top: 10px;
+
+    font-size: 0.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4f4f4f;
+  }
+
+  .informationLabel {
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-align: right;
+    color: $light-navy-blue;
+  }
+
+  .informationValue {
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4f4f4f;
+  }
+}
+
+.fcIcon {
+  width: 2.1875rem;
+  height: 2.52rem;
+}
