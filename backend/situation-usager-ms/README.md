@@ -13,14 +13,20 @@ Le projet est un projet Maven classique s'installant via la commande :
 mvn clean install
 ```
 
-# Démarrage
+# Utilisation (standard)
+
+## Prérequis
+L'application SpringCloudConfigServer doit être démarré.
+Elle est disponible [ici](../spring-cloud-config-server/README.md)
+
+## Démarrage
 
 Le serveur se lance de façon standard par la commande :
 ```
 java -jar target/situation-usager-ms-1.0-SNAPSHOT.jar
 ```
 
-# Utilisation (Dockerfile)
+## Utilisation (Dockerfile)
 
 Après un avoir installé le projet avec la commande :
 ```
