@@ -2,7 +2,7 @@
 
 ## URLs du DNC
 * URL de la plateforme de test: [http://dnc-dev.cloudapps.dfp.ovh](http://dnc-dev.cloudapps.dfp.ovh)
-* URL à intégrer dans le bouton: [http://dnc-dev.cloudapps.dfp.ovh/Redirect](http://dnc-dev.cloudapps.dfp.ovh/Redirect)
+* URL complète à intégrer (bouton ou lien): [http://dnc-dev.cloudapps.dfp.ovh/Redirect](http://dnc-dev.cloudapps.dfp.ovh/Redirect)
 
 ## En tant que fournisseur de service au citoyen
 Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justificatives du citoyen, 
