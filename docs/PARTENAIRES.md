@@ -1,20 +1,20 @@
 # Devenir partenaire du DNC
 
 ## URLs du DNC
-* URL de la plateforme de test: [http://dnc-dev.cloudapps.dfp.ovh](http://dnc-dev.cloudapps.dfp.ovh)
-* URL complète à intégrer (bouton ou lien): [http://dnc-dev.cloudapps.dfp.ovh/Redirect](http://dnc-dev.cloudapps.dfp.ovh/Redirect)
+* URL de la plateforme de test: [https://dnc.apps.ocp-sbg1.dfp.ovh](https://dnc.apps.ocp-sbg1.dfp.ovh)
+* URL complète à intégrer (bouton ou lien): [https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect](https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect)
 
 ## En tant que fournisseur de service au citoyen
 Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justificatives du citoyen, 
 sur votre formulaire, vous pouvez simplement ajouter un lien vers le DNC ou intégrer le bouton DNC ci-dessous.
 
-En phase d'expérimentation, le lien mène à la plateforme de dévelopement du [DNC](http://dnc-dev.cloudapps.dfp.ovh/).  
+En phase d'expérimentation, le lien mène à la plateforme de dévelopement du [DNC](https://dnc.apps.ocp-sbg1.dfp.ovh/).  
 
 Ci-dessous, le code HTML du bouton du DNC:
 ```html
 <div class="tooltip">
     <span class="tooltiptext">Connectez vous avec FranceConnect pour accéder à vos justificatifs</span>
-    <img class="btn" onclick="window.open('http://dnc-dev.cloudapps.dfp.ovh/Redirect', '_blank');">
+    <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect', '_blank');">
         <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
         <span class="text">Mes Justificatifs</span> 
     </button>
