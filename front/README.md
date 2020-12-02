@@ -199,6 +199,6 @@ For a list of available variables, refer to [Ant Design default theme](https://g
 __!! WARNING !!__
 If you want to use the scss variables defined in theme.scss in another scss file, you need to import it with a relative path:
 ```sass
-@import '../../style/theme.scss';
+@import 'src/style/theme.scss'
 ```
 Otherwise, the plugin is not aware that we import a file, and does not add the antd variables in the context of the importing file.

@@ -2,7 +2,7 @@
 ## Présentation du projet
 Présentation disponible [ici](docs/PROJECT.md)
 ## Devenir partenaire
-Modalités pour devenir partenaire disponible [ici](docs/PARTENAIRES.md)
+Modalités pour devenir partenaire disponible [ici](docs/partenaires)
 
 ## Code du Front
 Readme du projet Front [ici](front/README.md)
