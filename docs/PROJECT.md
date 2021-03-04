@@ -39,6 +39,9 @@ La page « Mes justificatifs » est le cœur du service proposé par le DNC : le
 - Les documents originaux : les documents sont appelés par API à la demande de l’usager dans son DNC. Il s’agit du document le plus à jour fourni par l’administration. Dès la déconnexion de la plateforme, ces documents sont supprimés du DNC.
 - Les documents générés sont issus des informations remontées par les API de données. Le document généré n’est pas stocké. Seules un identifiant de justificatif, une clé de chiffrement dédiée, la date de création et la date de fin de validité du document sont enregistrées, cela afin de prouver l’authentification a posteriori d’un document généré par le DNC. 
 
+Les documents reconstitués et générés par le DNC dispose d'un QR Code permettant de vérifier les données. 
+Plus d'informations sur le fonctionnement du QR Code sont disponibles [ici](Fonctionnement_QRCode.md). 
+
 ### 5. L’affichage de l’annuaire des services France Connect
 L’annuaire des services France Connect est une page gérée par France Connect et intégrée à la plateforme DNC. Le design, le comportement de la page et son contenu sont gérés par France Connect.
 ### 6. L’affichage de l’historique

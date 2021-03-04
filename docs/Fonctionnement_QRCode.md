@@ -18,10 +18,14 @@ Les clés de chiffrement sont propres à chaque justificatif généré et ne son
 
 Une fois la période arrivée à échéance la clé de chiffrement est supprimée du serveur et l’URL n’affiche plus les données.
 
+![Usage des QR Code dans le DNC](images/processus_qrcode_dnc.PNG)
+
 **Technologie**
 
-Le DNC utilise la librairie ZXing accessible en suivant le lien  : [https://github.com/zxing/zxing](https://github.com/zxing/zxing)
+Le DNC utilise la librairie ZXing accessible en suivant le lien : [https://github.com/zxing/zxing](https://github.com/zxing/zxing)
 
 **Taille du QR Code**
 
-La quantité totale de caractères  est définie par la base de l’URL + l’identifiant + les données chiffrées. Un QR code peut contenir plus ou moins 170 caractères.
+La quantité totale de caractères est définie par la base de l’URL + l’identifiant + les données chiffrées. Un QR code peut contenir plus ou moins 170 caractères.
+
+![Exemple de QR Codes avec des quantités de données différentes](images/exemples_qr_codes.PNG)
