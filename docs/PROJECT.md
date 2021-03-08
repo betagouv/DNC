@@ -60,4 +60,4 @@ L'utilisateur peut alors accéder rapidement aux justificatifs connus de l'admin
 ### DNC en mode portail autonome
 Le DNC en tant que « portail autonome », permettant une vision 360° des données personnelles, justificatifs et démarches en cours.
 
-![DNC-Standalone-1](images/dnc_standalone_1.png) ![DNC-Standalone-2](images/dnc_standalone_2.png)
+![DNC-Standalone-1](images/dnc_standalone_portail_autonome.png)
