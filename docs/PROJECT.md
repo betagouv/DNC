@@ -20,7 +20,7 @@ En tant que site internet, accessible avec son compte France Connect ou depuis u
 ## Comment le DNC gère les données personnelles ?
 Le DNC **n’est pas** un coffre-fort de documents. Il n’a pas vocation à stocker des documents. Il a vocation à afficher les données et documents qui vont être « appelées » lors de la connexion avec France connect auprès des fournisseurs de données partenaires. Le seul stockage concernera les documents produits et ce sur une période très courte (quelques minutes). Le DNC est construit dans le respect de la réglementation RGPD en vigueur dans le but de protéger le traitement des données des citoyens.
 
-## Quels sont les grandes fonctions proposées ?
+## Quelles sont les grandes fonctions proposées ?
 
 ### 1. La connexion au DNC. 
 La connexion au DNC se fait via France Connect ou tout autre fournisseur d’identité existant. Aucun autre moyen d’identification ne sera proposé. 
