@@ -11,14 +11,14 @@ Le dossier numérique du citoyen s’inscrit dans la lignée du programme « Dit
 ## A quoi sert le DNC ?
 Le DNC permettra à chaque citoyen :
 * D'accéder à l’ensemble de ses données et justificatifs, 
-* De suivre l’avancement des démarches en cours effectuées auprès des administrations partenaires,
-* De générer automatiquement les justificatifs les plus utilisés ou d'éditer des justificatifs personnalisés (ensemble des données sélectionnées résumées sur un document PDF, téléchargeable via le DNC). 
+* De suivre l’avancement des démarches en cours effectuées auprès des administrations partenaires (périmètre à venir),
+* De générer automatiquement les justificatifs les plus utilisés. 
 
 ## Où trouve-t-on le DNC ?
 En tant que site internet, accessible avec son compte France Connect ou depuis un bouton « mes justificatifs » intégrable à tout formulaire ou site désireux de faciliter la démarche d’un usager.
 
 ## Comment le DNC gère les données personnelles ?
-Le DNC **n’est pas** un coffre-fort de documents. Il n’a pas vocation à stocker des documents. Il a vocation à afficher les données et documents qui vont être « appelées » lors de la connexion avec France connect auprès des fournisseurs de données partenaires. Le seul stockage concernera les documents produits et ce sur une période très courte (quelques minutes). Le DNC est construit dans le respect de la réglementation RGPD en vigueur dans le but de protéger le traitement des données des citoyens.
+Le DNC **n’est pas** un coffre-fort de documents. Il n’a pas vocation à stocker des documents. Il a vocation à afficher les données et documents qui vont être « appelées » lors de la connexion avec France connect auprès des fournisseurs de données partenaires. Le seul stockage concernera les documents produits et ce sur une période très courte (quelques minutes) ainsi que des clés de jointures selon le souhait de l'usager. Le DNC est construit dans le respect de la réglementation RGPD en vigueur dans le but de protéger le traitement des données des citoyens.
 
 ## Quelles sont les grandes fonctions proposées ?
 
@@ -28,7 +28,7 @@ La procédure de connexion au DNC est actuellement dépendante du service France
 
 ### 2. L’affichage de « Mes informations »
 L’écran « Mes informations » est composée de « cartouches d’informations » recensant un choix d’informations remonté par l’API du fournisseur de données. 
-5 fournisseurs de données sont aujourd’hui listés : France connect (dont les données proviennent exclusivement de l’INSEE et du fournisseur d’identité utilisé par l’usager lors de sa connexion), la DGFIP (API impôt particulier), la CAF (API particulier), la CNAM (API CNAM). En appelant les API, le DNC peut recenser plus d’informations que celles qui sont affichées dans les cartouches. La fonctionnalité « Voir plus » permet d'afficher l’ensemble des données remontées. La fonctionnalité « signaler une erreur » permet d’accéder facilement à la procédure de signalement d’erreur prévue par le fournisseur de données.  
+5 fournisseurs de données sont aujourd’hui listés : France connect (dont les données proviennent exclusivement de l’INSEE et du fournisseur d’identité utilisé par l’usager lors de sa connexion), la DGFIP (API impôt particulier), la CAF, pôle emploi, le statut étudiant (API particulier), la CNAM (API CNAM). En appelant les API, le DNC peut recenser plus d’informations que celles qui sont affichées dans les cartouches. La fonctionnalité « Voir plus » permet d'afficher l’ensemble des données remontées. La fonctionnalité « signaler une erreur » permet d’accéder facilement à la procédure de signalement d’erreur prévue par le fournisseur de données.  
 
 ### 3. L’affichage de « Mes démarches » (en cours d'étude)
 L’écran « Mes démarches » propose deux services : 
@@ -36,9 +36,8 @@ L’écran « Mes démarches » propose deux services :
 - Une liste des états d’avancement des dossiers déposés auprès des services partenaires. Ces « états » seront exposés à l’usager dans son tableau de bord des démarches en cours, et il pourra alors accéder via un lien cliquable au contenu de son dossier sur le site du fournisseur de services.
 
 ### 4. L’affichage de « Mes justificatifs »
-La page « Mes justificatifs » est le cœur du service proposé par le DNC : le recensement, via API, de documents reconstitués. L'usager a deux possibilités :
-- Créer une attestation personnalisée : il peut y insérer n'importe quelle information dont il pourrait avoir besoin pour un cas d'usage particulier, à condition qu'elle soit transmise par API au DNC.
-- Consulter un justificatif dont le contenu est généré automatiquement à sa connexion avec des informations remontées par les API (justificatif de domicile, attestation de droit, attestation de quotient familial).
+La page « Mes justificatifs » est le cœur du service proposé par le DNC : le recensement, via API, de documents reconstitués. 
+L'usager peut consulter un justificatif dont le contenu est généré automatiquement à sa connexion avec des informations remontées par les API (justificatif de domicile, attestation de droit, attestation de quotient familial...).
 
 Dans les deux cas, il est possible de télécharger ou de partager le document, mais celui-ci n'est pas stocké. Seuls un identifiant de justificatif, une clé de chiffrement dédiée, la date de création et la date de fin de validité du document sont enregistrés, cela afin de prouver l’authentification a posteriori d’un document généré par le DNC. 
 
