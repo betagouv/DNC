@@ -39,7 +39,7 @@ L’écran « Mes démarches » propose deux services :
 La page « Mes justificatifs » est le cœur du service proposé par le DNC : le recensement, via API, de documents reconstitués. 
 L'usager peut consulter un justificatif dont le contenu est généré automatiquement à sa connexion avec des informations remontées par les API (justificatif de domicile, attestation de droit, attestation de quotient familial...).
 
-Dans les deux cas, il est possible de télécharger ou de partager le document, mais celui-ci n'est pas stocké. Seuls un identifiant de justificatif, une clé de chiffrement dédiée, la date de création et la date de fin de validité du document sont enregistrés, cela afin de prouver l’authentification a posteriori d’un document généré par le DNC. 
+Il est alors possible pour lui de télécharger ou de partager le document, mais celui-ci n'est pas stocké. Seuls un identifiant de justificatif, une clé de chiffrement dédiée, la date de création et la date de fin de validité du document sont enregistrés, cela afin de prouver l’authentification a posteriori d’un document généré par le DNC. 
 
 Les documents reconstitués et générés par le DNC disposent d'un QR Code permettant de vérifier l’authenticité des données affichées sur le document. 
 Plus d'informations sur le fonctionnement du QR Code sont disponibles [ici](Fonctionnement_QRCode.md). 
@@ -55,7 +55,7 @@ La page d’aide recense l'ensemble des questions que l'usager pourrait se poser
 
 ### 8. L'intégration du DNC
 Le DNC s'intègre simplement en ajoutant un lien ou un bouton ouvrant le DNC dans un nouvel onglet ou une nouvelle fenêtre du navigateur.
-L'utilisateur peut alors accéder rapidement aux justificatifs connus de l'administration, les télécharger et les réutiliser dans ses démarches. Il peut aussi paramétrer un bouton permettant de pré-sélectionner certains justificatifs ou une attestation personnalisée.
+L'utilisateur peut alors accéder rapidement aux justificatifs connus de l'administration, les télécharger et les réutiliser dans ses démarches. Il peut aussi paramétrer un bouton permettant de pré-sélectionner certains justificatifs.
 
 
 ![DNC-Standalone-1](images/dnc_standalone_portail_autonome.png)
