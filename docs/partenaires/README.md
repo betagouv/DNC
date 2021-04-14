@@ -11,7 +11,7 @@ Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justif
 
 *En phase d'expérimentation, le lien mène à la plateforme de développement du DNC.*
 
-L'équipe DNC met à disposition 3 types de boutons :
+L'équipe DNC met à disposition 2 types de boutons :
 
  - Un bouton **générique** : l’usager se connecte simplement au DNC
  - Un bouton de **présélection** d’un ou plusieurs justificatifs : l'usager arrive sur une liste présélectionnée de justificatifs qu'il peut simplement télécharger. 
