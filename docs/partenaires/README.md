@@ -14,12 +14,13 @@ Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justif
 L'équipe DNC met à disposition 3 types de boutons :
 
  - Un bouton **générique** : l’usager se connecte simplement au DNC
- - Un bouton de **présélection** d’une ou plusieurs attestations : l'usager arrive sur une liste présélectionnée d’attestations qu'il peut simplement télécharger. 
+ - Un bouton de **présélection** d’un ou plusieurs justificatifs : l'usager arrive sur une liste présélectionnée de justificatifs qu'il peut simplement télécharger. 
  
  
 ![Exemple d'affichage](exemple_boutonDNC.png)
 
 Peu importe le mode d'implémentation choisi, nous vous invitons à paramétrer l'URL du DNC afin de facilement mettre à jour votre plateforme.
+
 ### 2.1.	Bouton générique
 Le bouton générique permet à l’usager de se connecter simplement au DNC.
 Ci-dessous, le code HTML du bouton générique du DNC :
@@ -35,9 +36,9 @@ Ci-dessous, le code HTML du bouton générique du DNC :
 Le code complet du bouton générique est disponible ici : [https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html](https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html)
 
 
-### 2.2.	Bouton de présélection d’une ou plusieurs attestations
+### 2.2.	Bouton de présélection d’un ou plusieurs justificatifs
 
-Le bouton de présélection permet à l'usager d’arriver sur une liste de d’attestations présélectionnés qu'il peut simplement télécharger.
+Le bouton de présélection permet à l'usager d’arriver sur une liste de justificatifs présélectionnés qu'il peut simplement télécharger.
 
 La différence entre le bouton de présélection et le bouton générique **est l'ajout du paramètre scope dans l'URL.** Celui-ci peut avoir différentes valeurs :
 
