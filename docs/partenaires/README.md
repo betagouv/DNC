@@ -49,7 +49,7 @@ La différence entre le bouton de présélection et le bouton générique **est 
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o Justificatif d’informations personnelles FranceConnect
+ o Justificatif d’informations personnelles FranceConnect  
 
 **Code HTML :**
 
@@ -68,8 +68,8 @@ o Justificatif d’informations personnelles FranceConnect
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif d’adresse
+ o	Justificatif d’informations personnelles FranceConnect  
+ o	Justificatif d’adresse  
 
 **Code HTML :**
 
@@ -88,8 +88,8 @@ o	Justificatif d’adresse
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant  
 
 **Code HTML :**
 
@@ -108,8 +108,8 @@ o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif de droits CNAM 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatif de droits CNAM  
 
 **Code HTML :**
 
@@ -128,8 +128,8 @@ o	Justificatif de droits CNAM
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif de quotient familial 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatif de quotient familial  
 
 **Code HTML :**
 
@@ -148,8 +148,8 @@ o	Justificatif de quotient familial
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif de revenus 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatif de revenus  
 
 **Code HTML :**
 
@@ -168,9 +168,9 @@ o	Justificatif de revenus
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif de revenus 
-o	Justificatif d’adresse 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatif de revenus  
+o	Justificatif d’adresse  
 
 
 **Code HTML :**
@@ -190,10 +190,10 @@ o	Justificatif d’adresse
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatif d’adresse 
-o	Justificatifs de droits CNAM 
-o	Justificatif de diplôme 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatif d’adresse  
+o	Justificatifs de droits CNAM  
+o	Justificatif de diplôme  
 
 **Code HTML :**
 
@@ -212,9 +212,9 @@ o	Justificatif de diplôme
 **Utilisation :** 
 
 **Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect 
-o	Justificatifs de droits CNAM 
-o	Justificatif de quotient familial 
+o	Justificatif d’informations personnelles FranceConnect  
+o	Justificatifs de droits CNAM  
+o	Justificatif de quotient familial  
 
 **Code HTML :**
 
