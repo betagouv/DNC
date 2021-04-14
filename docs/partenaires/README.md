@@ -47,6 +47,7 @@ La différence entre le bouton de présélection et le bouton générique **est 
 **Paramètre scope :** Bouton1
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive11.JPG)
 
 **Justificatif téléchargeable :**  
  o Justificatif d’informations personnelles FranceConnect  
@@ -65,7 +66,7 @@ La différence entre le bouton de présélection et le bouton générique **est 
 
 **Paramètre scope :** Bouton2
 
-**Utilisation :** 
+**Utilisation :** ![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive12.JPG)
 
 **Justificatif téléchargeable :**  
  o	Justificatif d’informations personnelles FranceConnect  
@@ -86,6 +87,7 @@ La différence entre le bouton de présélection et le bouton générique **est 
 **Paramètre scope :** Bouton3
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive13.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
@@ -106,6 +108,7 @@ o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant
 **Paramètre scope :** Bouton4
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive14.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
@@ -126,6 +129,7 @@ o	Justificatif de droits CNAM
 **Paramètre scope :** Bouton5
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive15.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
@@ -146,6 +150,7 @@ o	Justificatif de quotient familial
 **Paramètre scope :** Bouton6
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive16.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
@@ -166,6 +171,7 @@ o	Justificatif de revenus
 **Paramètre scope :** Bouton7
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive17.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
@@ -188,6 +194,7 @@ o	Justificatif d’adresse
 **Paramètre scope :** Bouton8
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive18.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
@@ -210,6 +217,7 @@ o	Justificatif de diplôme
 **Paramètre scope :** Bouton9
 
 **Utilisation :** 
+![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive19.JPG)
 
 **Justificatif téléchargeable :**  
 o	Justificatif d’informations personnelles FranceConnect  
