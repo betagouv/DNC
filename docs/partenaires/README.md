@@ -41,44 +41,188 @@ Le bouton de présélection permet à l'usager d’arriver sur une liste de d’
 
 La différence entre le bouton de présélection et le bouton générique **est l'ajout du paramètre scope dans l'URL.** Celui-ci peut avoir différentes valeurs :
 
-*a.	DECLARATION DES REVENUS*
+*BOUTON N°1*
 
-**Paramètre scope :** DeclarationDesRevenus
+**Paramètre scope :** Bouton1
 
-**Utilisation :** permet de présélectionner les attestations liés à ses revenus et à sa déclaration aux impôts par exemple.
+**Utilisation :** 
 
-**Attestations téléchargeables :**  
-o	Attestation de quotient familial
-o	Attestation de revenus
-
-**Code HTML :**
-
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs liés à vos revenus</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=DeclarationDesRevenus', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs liés à mes revenus</span> 
-        </button>
-    </div>
-
-*b.	NOUVELLE EMBAUCHE*
-
-**Paramètre scope :** NouvelleEmbauche
-
-**Utilisation :** permet de présélectionner les attestations nécessaires dans le cadre d’une nouvelle embauche par exemple.
-
-**Attestations téléchargeables :**  
-o	Informations personnelles FranceConnect
-o	Attestation de droits
+**Justificatif téléchargeable :**  
+o Justificatif d’informations personnelles FranceConnect
 
 **Code HTML :**
 
     <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs liés à votre nouvelle embauche</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope= NouvelleEmbauche, '_blank');">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton1', '_blank');">
             <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs liés à ma nouvelle embauche</span> 
+            <span class="text">Mes Justificatifs</span> 
         </button>
     </div>
 
+*BOUTON N°2*
 
+**Paramètre scope :** Bouton2
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif d’adresse
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton2', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+    
+*BOUTON N°3*
+
+**Paramètre scope :** Bouton3
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton3', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+
+*BOUTON N°4*
+
+**Paramètre scope :** Bouton4
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif de droits CNAM
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton4', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+    
+*BOUTON N°5*
+
+**Paramètre scope :** Bouton5
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif de quotient familial
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton5', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+
+*BOUTON N°6*
+
+**Paramètre scope :** Bouton6
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif de revenus
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton6', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+    
+*BOUTON N°7*
+
+**Paramètre scope :** Bouton7
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif de revenus
+o	Justificatif d’adresse
+
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton7', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+    
+*BOUTON N°8*
+
+**Paramètre scope :** Bouton8
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatif d’adresse
+o	Justificatifs de droits CNAM
+o	Justificatif de diplôme
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton8', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+
+*BOUTON N°9*
+
+**Paramètre scope :** Bouton9
+
+**Utilisation :** 
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect
+o	Justificatifs de droits CNAM
+o	Justificatif de quotient familial
+
+**Code HTML :**
+
+    <div class="tooltip">
+        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
+        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton9', '_blank');">
+            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
+            <span class="text">Mes Justificatifs</span> 
+        </button>
+    </div>
+        
+    
