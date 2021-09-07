@@ -5,11 +5,9 @@
  - URL complète à intégrer (bouton ou lien) : [https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect](https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect)
  - URL de test des boutons : [https://dnc.apps.ocp-sbg1.dfp.ovh/test-button](https://dnc.apps.ocp-sbg1.dfp.ovh/test-button)
 
-## 2.	En tant que fournisseur de service au citoyen
+## 2.	En tant que fournisseur de service
 
 Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justificatives du citoyen, sur votre formulaire, vous pouvez simplement ajouter un lien vers le DNC ou intégrer un des boutons DNC ci-dessous.
-
-*En phase d'expérimentation, le lien mène à la plateforme de développement du DNC.*
 
 L'équipe DNC met à disposition 2 types de boutons :
 
