@@ -17,7 +17,7 @@
 
     <properties>
         <!--Spring Cloud Config-->
-        <spring-cloud-config.version>2.2.3.RELEASE</spring-cloud-config.version>
+        <spring-cloud-config.version>2.2.4.RELEASE</spring-cloud-config.version>
         <!-- Database -->
         <postgres.version>42.2.8</postgres.version>
         <!-- Test -->
