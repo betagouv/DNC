@@ -41,7 +41,7 @@ Plus d'informations sur le fonctionnement du QR Code sont disponibles [ici](Fonc
 ### 4. La page d’aide
 La page d’aide recense l'ensemble des questions que l'usager pourrait se poser sous la forme d'une FAQ.
 
-### 8. L'intégration du DNC
+### 5. L'intégration du DNC
 Le DNC s'intègre simplement en ajoutant un lien ou un bouton ouvrant le DNC dans un nouvel onglet ou une nouvelle fenêtre du navigateur.
 L'utilisateur peut alors accéder rapidement aux justificatifs connus de l'administration, les télécharger et les réutiliser dans ses démarches. Il peut aussi paramétrer un bouton permettant de pré-sélectionner certains justificatifs.
 
