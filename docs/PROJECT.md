@@ -45,5 +45,3 @@ La page d’aide recense l'ensemble des questions que l'usager pourrait se poser
 Le DNC s'intègre simplement en ajoutant un lien ou un bouton ouvrant le DNC dans un nouvel onglet ou une nouvelle fenêtre du navigateur.
 L'utilisateur peut alors accéder rapidement aux justificatifs connus de l'administration, les télécharger et les réutiliser dans ses démarches. Il peut aussi paramétrer un bouton permettant de pré-sélectionner certains justificatifs.
 
-
-![DNC-Standalone-1](images/dnc_standalone_portail_autonome.png)
