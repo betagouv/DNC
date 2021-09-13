@@ -1,4 +1,0 @@
-{
-  "scopes": ["openid", "identite_pivot", "address", "dgfip_rfr", "quotient_familial"],
-  "demarche": "stationnement"
-}
