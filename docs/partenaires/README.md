@@ -15,7 +15,7 @@ L'équipe Mon FranceConnect met à disposition 2 types de boutons :
  - Un bouton de **présélection** d’un ou plusieurs justificatifs : l'usager arrive sur une liste présélectionnée de justificatifs qu'il peut simplement télécharger. 
  
  
-![Exemple d'affichage](exemple_boutonDNC.png)
+![Exemple d'affichage](bouton_mes_justificatifs.png)
 
 Peu importe le mode d'implémentation choisi, nous vous invitons à paramétrer l'URL de Mon FranceConnect afin de facilement mettre à jour votre plateforme.
 
