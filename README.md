@@ -1,4 +1,4 @@
-# Projet Mon FranceConnect - Dossier Numérique du Citoyen
+# Projet Mon FranceConnect
 ## Présentation du projet
 Présentation disponible [ici](docs/PROJECT.md)
 ## Devenir partenaire
