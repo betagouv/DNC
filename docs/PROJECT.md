@@ -11,11 +11,11 @@ Mon FranceConnect s’inscrit dans la lignée du programme « Dites-le-nous qu�
 ## A quoi sert Mon FranceConnect ?
 Mon FranceConnect permettra à chaque citoyen :
 * D'accéder à l’ensemble de ses données,
-* de signaler une erreur,
+* De signaler une erreur,
 * De générer automatiquement les justificatifs les plus utilisés. 
 
 ## Où trouve-t-on Mon FranceConnect ?
-En tant que site internet, accessible avec son compte France Connect ou depuis un bouton « mes justificatifs » intégrable à tout formulaire ou site désireux de faciliter la démarche d’un usager.
+En tant que site internet, accessible avec son compte France Connect ou depuis un bouton « Mes justificatifs avec Mon FranceConnect » intégrable à tout formulaire ou site désireux de faciliter la démarche d’un usager.
 
 ## Comment Mon FranceConnect gère les données personnelles ?
 Mon FranceConnect **n’est pas** un coffre-fort de documents. Il n’a pas vocation à stocker des documents. Il a vocation à afficher les données et documents qui vont être « appelées » lors de la connexion avec France connect auprès des fournisseurs de données partenaires. Le seul stockage concernera les documents produits et ce sur une période très courte (quelques minutes) ainsi que des identifiants selon le souhait de l'usager. Mon FranceConnect est construit dans le respect de la réglementation RGPD en vigueur dans le but de protéger le traitement des données des citoyens.
