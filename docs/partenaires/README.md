@@ -1,5 +1,5 @@
-# Devenir partenaire du DNC
-## 1.	URLs du DNC
+# Devenir partenaire de Mon FranceConnect
+## 1.	URLs de Mon FranceConnect
 
  - URL de la plateforme de test : [https://dnc.apps.ocp-sbg1.dfp.ovh](https://dnc.apps.ocp-sbg1.dfp.ovh)
  - URL complète à intégrer (bouton ou lien) : [https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect](https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect)
@@ -7,21 +7,21 @@
 
 ## 2.	En tant que fournisseur de service
 
-Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justificatives du citoyen, sur votre formulaire, vous pouvez simplement ajouter un lien vers le DNC ou intégrer un des boutons DNC ci-dessous.
+Dans le cadre d'une démarche ou d'un formulaire nécessitant des pièces justificatives du citoyen, sur votre formulaire, vous pouvez simplement ajouter un lien vers Mon FranceConnect ou intégrer un des boutons ci-dessous.
 
-L'équipe DNC met à disposition 2 types de boutons :
+L'équipe Mon FranceConnect met à disposition 2 types de boutons :
 
- - Un bouton **générique** : l’usager se connecte simplement au DNC
+ - Un bouton **générique** : l’usager se connecte simplement à Mon FranceConnect
  - Un bouton de **présélection** d’un ou plusieurs justificatifs : l'usager arrive sur une liste présélectionnée de justificatifs qu'il peut simplement télécharger. 
  
  
 ![Exemple d'affichage](exemple_boutonDNC.png)
 
-Peu importe le mode d'implémentation choisi, nous vous invitons à paramétrer l'URL du DNC afin de facilement mettre à jour votre plateforme.
+Peu importe le mode d'implémentation choisi, nous vous invitons à paramétrer l'URL de Mon FranceConnect afin de facilement mettre à jour votre plateforme.
 
 ### 2.1.	Bouton générique
-Le bouton générique permet à l’usager de se connecter simplement au DNC.
-Ci-dessous, le code HTML du bouton générique du DNC :
+Le bouton générique permet à l’usager de se connecter simplement à Mon FranceConnect.
+Ci-dessous, le code HTML du bouton générique Mon FranceConnect :
 
     <div class="tooltip">
         <span class="tooltiptext">Connectez vous avec FranceConnect pour accéder à vos justificatifs</span>
