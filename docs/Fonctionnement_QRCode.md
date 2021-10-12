@@ -18,7 +18,7 @@ Les clés de chiffrement sont propres à chaque justificatif généré et ne son
 
 Une fois la période arrivée à échéance la clé de chiffrement est supprimée du serveur et l’URL n’affiche plus les données.
 
-![Usage des QR Code dans le DNC](images/processus_qrcode_dnc.PNG)
+![Usage des QR Code dans Mon FranceConnect](images/Processus_QR_Code_Mon_FranceConnect.PNG)
 
 ## Technologie
 
