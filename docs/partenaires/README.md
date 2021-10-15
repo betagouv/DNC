@@ -50,14 +50,13 @@ La différence entre le bouton de présélection et le bouton générique **est 
  o Justificatif d’informations personnelles FranceConnect  
 
 **Code HTML :**
-
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton1', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton1', '_blank');" />
 
 *BOUTON N°2*
 
@@ -71,13 +70,12 @@ La différence entre le bouton de présélection et le bouton générique **est 
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton2', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton2', '_blank');" />
     
 *BOUTON N°3*
 
@@ -92,13 +90,12 @@ o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton3', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton3', '_blank');" />
 
 *BOUTON N°4*
 
@@ -113,13 +110,12 @@ o	Justificatif de droits CNAM
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton4', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton4', '_blank');" />
     
 *BOUTON N°5*
 
@@ -134,13 +130,12 @@ o	Justificatif de quotient familial
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton5', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton5', '_blank');" />
 
 *BOUTON N°6*
 
@@ -155,13 +150,12 @@ o	Justificatif de revenus
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton6', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton6', '_blank');" />
     
 *BOUTON N°7*
 
@@ -178,13 +172,12 @@ o	Justificatif d’adresse
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton7', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton7', '_blank');" />
     
 *BOUTON N°8*
 
@@ -201,13 +194,12 @@ o	Justificatif de diplôme
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton8', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+    <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton8', '_blank');" />
 
 *BOUTON N°9*
 
@@ -223,12 +215,13 @@ o	Justificatif de quotient familial
 
 **Code HTML :**
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez-vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton9', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+    <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton9', '_blank');" />
+    
+   
         
     
