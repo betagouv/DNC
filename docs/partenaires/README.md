@@ -23,13 +23,12 @@ Peu importe le mode d'implémentation choisi, nous vous invitons à paramétrer 
 Le bouton générique permet à l’usager de se connecter simplement à Mon FranceConnect.
 Ci-dessous, le code HTML du bouton générique Mon FranceConnect :
 
-    <div class="tooltip">
-        <span class="tooltiptext">Connectez vous avec FranceConnect pour accéder à vos justificatifs</span>
-        <img class="btn" onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect', '_blank');">
-            <img style="width: 1.65rem" alt="DNC" src="LogoDNC.svg"/> 
-            <span class="text">Mes Justificatifs</span> 
-        </button>
-    </div>
+    <button 
+      type="button" 
+      aria-label="Mes justificatifs avec Mon FranceConnect" 
+      title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+      class="mfc-button" 
+      onclick="window.open('https://dnc-dev.apps.ocp-sbg1.dfp.ovh/Redirect', '_blank');" />
 
 Le code complet du bouton générique est disponible ici : [https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html](https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html)
 
