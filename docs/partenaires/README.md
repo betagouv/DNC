@@ -39,6 +39,91 @@ Le bouton de présélection permet à l'usager d’arriver sur une liste de just
 
 La différence entre le bouton de présélection et le bouton générique **est l'ajout du paramètre scope dans l'URL.** Celui-ci peut avoir différentes valeurs :
 
+*BOUTON IDENTITE FRANCECONNECT*
+
+**Paramètre scope :** BoutonFC
+
+**Justificatif téléchargeable :**  
+o	Justificatif d’informations personnelles FranceConnect  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonFC', '_blank');" />
+
+
+*BOUTON CNAM*
+
+**Paramètre scope :** BoutonCNAM
+
+**Justificatif téléchargeable :**  
+o	Justificatif de droits CNAM  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonCNAM', '_blank');" />
+
+
+*BOUTON CAF*
+
+**Paramètre scope :** BoutonCAF
+
+**Justificatif téléchargeable :**  
+o	Justificatif de quotient familial  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonCAF', '_blank');" />
+
+
+*BOUTON DGFIP*
+
+**Paramètre scope :** BoutonDGFIP
+
+**Justificatif téléchargeable :**  
+o	Justificatif de revenus  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonDGFIP', '_blank');" />
+
+
+*BOUTON POLE EMPLOI*
+
+**Paramètre scope :** BoutonPE
+
+**Justificatif téléchargeable :**  
+o	Justificatif d'inscription à Pôle Emploi  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonPE', '_blank');" />
+
+
 *BOUTON N°1*
 
 **Paramètre scope :** Bouton1
