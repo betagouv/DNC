@@ -1,9 +1,9 @@
 # Devenir partenaire de Mon FranceConnect
 ## 1.	URLs de Mon FranceConnect
 
- - URL de la plateforme de test : [https://dnc.apps.ocp-sbg1.dfp.ovh](https://dnc.apps.ocp-sbg1.dfp.ovh)
- - URL complète à intégrer (bouton ou lien) : [https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect](https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect)
- - URL de test des boutons : [https://dnc.apps.ocp-sbg1.dfp.ovh/test-button](https://dnc.apps.ocp-sbg1.dfp.ovh/test-button)
+ - URL de la plateforme : [https://mon.franceconnect.gouv.fr](https://mon.franceconnect.gouv.fr)
+ - URL complète à intégrer (bouton ou lien) : [https://mon.franceconnect.gouv.fr/Redirect](https://mon.franceconnect.gouv.fr/Redirect)
+ - URL de test des boutons : [https://mon.franceconnect.gouv.fr/test-button](https://mon.franceconnect.gouv.fr/test-button)
 
 ## 2.	En tant que fournisseur de service
 
@@ -28,7 +28,7 @@ Ci-dessous, le code HTML du bouton générique Mon FranceConnect :
       aria-label="Mes justificatifs avec Mon FranceConnect" 
       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
       class="mfc-button" 
-      onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect', '_blank');" />
+      onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect', '_blank');" />
 
 Le code complet du bouton générique est disponible ici : [https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html](https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html)
 
@@ -38,23 +38,6 @@ Le code complet du bouton générique est disponible ici : [https://github.com/b
 Le bouton de présélection permet à l'usager d’arriver sur une liste de justificatifs présélectionnés qu'il peut simplement télécharger.
 
 La différence entre le bouton de présélection et le bouton générique **est l'ajout du paramètre scope dans l'URL.** Celui-ci peut avoir différentes valeurs :
-
-*BOUTON IDENTITE FRANCECONNECT*
-
-**Paramètre scope :** BoutonFC
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-
-**Code HTML :**
-   
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonFC', '_blank');" />
-
 
 *BOUTON CNAM*
 
@@ -70,7 +53,7 @@ o	Justificatif de droits CNAM
        aria-label="Mes justificatifs avec Mon FranceConnect" 
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonCNAM', '_blank');" />
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCNAM', '_blank');" />
 
 
 *BOUTON CAF*
@@ -87,7 +70,7 @@ o	Justificatif de quotient familial
        aria-label="Mes justificatifs avec Mon FranceConnect" 
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonCAF', '_blank');" />
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCAF', '_blank');" />
 
 
 *BOUTON DGFIP*
@@ -104,7 +87,7 @@ o	Justificatif de revenus
        aria-label="Mes justificatifs avec Mon FranceConnect" 
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonDGFIP', '_blank');" />
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonDGFIP', '_blank');" />
 
 
 *BOUTON POLE EMPLOI*
@@ -121,192 +104,6 @@ o	Justificatif d'inscription à Pôle Emploi
        aria-label="Mes justificatifs avec Mon FranceConnect" 
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=BoutonPE', '_blank');" />
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonPE', '_blank');" />
 
 
-*BOUTON N°1*
-
-**Paramètre scope :** Bouton1
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive13.JPG)
-
-**Justificatif téléchargeable :**  
- o Justificatif d’informations personnelles FranceConnect  
-
-**Code HTML :**
-   
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton1', '_blank');" />
-
-*BOUTON N°2*
-
-**Paramètre scope :** Bouton2
-
-**Utilisation :** ![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive14.JPG)
-
-**Justificatif téléchargeable :**  
- o	Justificatif d’informations personnelles FranceConnect  
- o	Justificatif d’adresse  
-
-**Code HTML :**
-
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton2', '_blank');" />
-    
-*BOUTON N°3*
-
-**Paramètre scope :** Bouton3
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive15.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatif d’inscription Pôle Emploi / Justificatif étudiant  
-
-**Code HTML :**
-
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton3', '_blank');" />
-
-*BOUTON N°4*
-
-**Paramètre scope :** Bouton4
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive16.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatif de droits CNAM  
-
-**Code HTML :**
-
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton4', '_blank');" />
-    
-*BOUTON N°5*
-
-**Paramètre scope :** Bouton5
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive17.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatif de quotient familial  
-
-**Code HTML :**
-
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton5', '_blank');" />
-
-*BOUTON N°6*
-
-**Paramètre scope :** Bouton6
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive18.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatif de revenus  
-
-**Code HTML :**
-
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton6', '_blank');" />
-    
-*BOUTON N°7*
-
-**Paramètre scope :** Bouton7
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive19.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatif de revenus  
-o	Justificatif d’adresse  
-
-
-**Code HTML :**
-
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton7', '_blank');" />
-    
-*BOUTON N°8*
-
-**Paramètre scope :** Bouton8
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive20.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatif d’adresse  
-o	Justificatifs de droits CNAM  
-o	Justificatif de diplôme  
-
-**Code HTML :**
-
-    <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton8', '_blank');" />
-
-*BOUTON N°9*
-
-**Paramètre scope :** Bouton9
-
-**Utilisation :** 
-![Exemple d'utilisation](https://github.com/betagouv/DNC/blob/master/docs/images/Diapositive21.JPG)
-
-**Justificatif téléchargeable :**  
-o	Justificatif d’informations personnelles FranceConnect  
-o	Justificatifs de droits CNAM  
-o	Justificatif de quotient familial  
-
-**Code HTML :**
-
-    <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://dnc.apps.ocp-sbg1.dfp.ovh/Redirect/?scope=Bouton9', '_blank');" />
-    
-   
-        
-    
