@@ -33,7 +33,29 @@ Ci-dessous, le code HTML du bouton générique Mon FranceConnect :
 Le code complet du bouton générique est disponible ici : [https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html](https://github.com/betagouv/DNC/blob/master/docs/partenaires/bouton.html)
 
 
-### 2.2.	Bouton de présélection d’un ou plusieurs justificatifs
+### 2.2.	Paramètres d'identification du partenaire
+
+Les boutons disposent de 2 paramètres supplémentaires qui permettent à l'équipe Projet d'identifier les utilisateurs venant des différents partenaires. **Les valeurs de ces paramètres doivent être encodées pour une URL.** Ces paramètres sont : 
+
+- partenaire : SIRET du partenaire ayant intégré le bouton
+  - Faire attention à ne pas introduire d'espace
+  - Exemple : *partenaire=326820065* pour le partenaire Sopra Steria
+- démarche : Nom de la démarche encodée pour une URL
+  - Exemple : *démarche=Revue%20couverture%20maladie*
+
+Ces paramètres ne sont pas obligatoires mais sont nécessaires pour permettre l'identification des usages des boutons. Les paramètres peuvent être ajoutés à la fin de l'URL comme des paramètres supplémentaires via le caractère "?" (premier paramètre) et séparés par le caractère "&".
+
+*Exemples d'URLS avec tous les paramètres* : 
+- URL pour un Bouton générique : 'https://mon.franceconnect.gouv.fr/Redirect/?partenaire=32680065&démarche=Liens%20Utiles'
+- URL pour un Bouton de préselection : 'https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCNAM&partenaire=32680065&démarche=Revue%20couverture%20maladie'
+
+Le bouton de présélection permet à l'usager d’arriver sur une liste de justificatifs présélectionnés qu'il peut simplement télécharger.
+
+**Le reste du code pour le bouton est strictement identique.**
+
+**Merci de mettre à jour les URLs utilisées en fonction de votre SIRET et de vos démarches.**
+
+### 2.3.	Bouton de présélection d’un ou plusieurs justificatifs
 
 Le bouton de présélection permet à l'usager d’arriver sur une liste de justificatifs présélectionnés qu'il peut simplement télécharger.
 
