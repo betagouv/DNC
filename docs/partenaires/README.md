@@ -61,12 +61,12 @@ Le bouton de présélection permet à l'usager d’arriver sur une liste de just
 
 La différence entre le bouton de présélection et le bouton générique **est l'ajout du paramètre scope dans l'URL.** Celui-ci peut avoir différentes valeurs :
 
-*BOUTON CNAM*
+*BOUTON Adresse déclarée*
 
-**Paramètre scope :** BoutonCNAM
+**Paramètre scope :** BoutonADRESSE
 
 **Justificatif téléchargeable :**  
-o	Justificatif de droits CNAM  
+o	Justificatif d'adresse déclarée  
 
 **Code HTML :**
    
@@ -75,9 +75,9 @@ o	Justificatif de droits CNAM
        aria-label="Mes justificatifs avec Mon FranceConnect" 
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
-       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCNAM', '_blank');" />
-
-
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonADRESSE', '_blank');" />
+       
+       
 *BOUTON CAF*
 
 **Paramètre scope :** BoutonCAF
@@ -93,6 +93,23 @@ o	Justificatif de quotient familial
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
        onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCAF', '_blank');" />
+
+
+*BOUTON CNAM*
+
+**Paramètre scope :** BoutonCNAM
+
+**Justificatif téléchargeable :**  
+o	Justificatif de droits CNAM  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCNAM', '_blank');" />
 
 
 *BOUTON DGFIP*
