@@ -76,25 +76,8 @@ o	Justificatif d'adresse déclarée
        title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
        class="mfc-button" 
        onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonADRESSE', '_blank');" />
-       
-       
-*BOUTON CAF*
-
-**Paramètre scope :** BoutonCAF
-
-**Justificatif téléchargeable :**  
-o	Justificatif de quotient familial  
-
-**Code HTML :**
-   
-     <button 
-       type="button" 
-       aria-label="Mes justificatifs avec Mon FranceConnect" 
-       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
-       class="mfc-button" 
-       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonCAF', '_blank');" />
-
-
+ 
+ 
 *BOUTON CNAM*
 
 **Paramètre scope :** BoutonCNAM
@@ -129,7 +112,24 @@ o	Justificatif de revenus
        onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonDGFIP', '_blank');" />
 
 
-*BOUTON POLE EMPLOI*
+*BOUTON INDEMNISATIONS POLE EMPLOI*
+
+**Paramètre scope :** BoutonIndemnisationPE
+
+**Justificatif téléchargeable :**  
+o	Justificatif d'indemnisation Pôle Emploi  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonIndemnisationPE', '_blank');" />
+
+
+*BOUTON STATUT DEMANDEUR D'EMPLOI (POLE EMPLOI)*
 
 **Paramètre scope :** BoutonPE
 
@@ -146,3 +146,35 @@ o	Justificatif d'inscription à Pôle Emploi
        onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonPE', '_blank');" />
 
 
+*BOUTON STATUT ETUDIANT*
+
+**Paramètre scope :** BoutonEtudiant
+
+**Justificatif téléchargeable :**  
+o	Justificatif de statut étudiant  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonEtudiant', '_blank');" />
+       
+
+*BOUTON STATUT ETUDIANT BOURSIER*
+
+**Paramètre scope :** BoutonEtudiantBoursier
+
+**Justificatif téléchargeable :**  
+o	Justificatif de statut étudiant boursier  
+
+**Code HTML :**
+   
+     <button 
+       type="button" 
+       aria-label="Mes justificatifs avec Mon FranceConnect" 
+       title="Connectez vous avec FranceConnect pour accéder à vos justificatifs" 
+       class="mfc-button" 
+       onclick="window.open('https://mon.franceconnect.gouv.fr/Redirect/?scope=BoutonEtudiantBoursier', '_blank');" />
